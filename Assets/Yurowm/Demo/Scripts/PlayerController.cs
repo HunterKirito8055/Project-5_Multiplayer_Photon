@@ -10,7 +10,12 @@ public class PlayerController : MonoBehaviour {
 
 	private Animator animator;
 
-	void Awake() {
+    private void Update()
+    {
+        Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+       
+    }
+    void Awake() {
 		animator = GetComponent<Animator> ();
 		if (arsenal.Length > 0)
 			SetArsenal (arsenal[0].name);
