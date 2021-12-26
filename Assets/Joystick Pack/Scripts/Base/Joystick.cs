@@ -38,7 +38,7 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
     private Canvas canvas;
     private Camera cam;
 
-    public Vector2 input = Vector2.zero;
+    [SerializeField] public Vector2 input = Vector2.zero;
 
     protected virtual void Start()
     {
