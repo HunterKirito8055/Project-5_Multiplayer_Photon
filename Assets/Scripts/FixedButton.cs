@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class FixedButton : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
+public class FixedButton : MonoBehaviour, IPointerUpHandler, IPointerDownHandler,IPointerClickHandler
 {
     [HideInInspector]
     public bool Pressed;
@@ -26,5 +26,10 @@ public class FixedButton : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
     public void OnPointerUp(PointerEventData eventData)
     {
         Pressed = false;
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        throw new System.NotImplementedException();
     }
 }

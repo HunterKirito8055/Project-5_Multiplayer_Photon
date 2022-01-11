@@ -5,26 +5,52 @@ using UnityEngine;
 
 public class MyPlayer : MonoBehaviour
 {
-    public float MoveSpeed = 3f;
+    public float moveSpeed = 3f;
     public float smoothRotationTime = 0.25f;
-    float currentVeclocity;
+    public bool enableMobile;
+    public FixedJoystick joystick;
 
-    float currentSpeed;
-    float speedVelocity;
+    [Space(20)]
+    [Header("Just There!")]
+    public float currentVeclocity;
+    public float currentSpeed;
+    public float speedVelocity;
+    Transform myCamera;
+    Actions playerActions;
+    private void Start()
+    {
+        myCamera = Camera.main.transform;
+        playerActions = GetComponent<Actions>();
+    }
     void Update()
     {
-        Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-        Vector2 inputDir = input.normalized;
-
-        if (inputDir != Vector2.zero)
-        { 
-            float rotation =  Mathf.Atan2(inputDir.x, inputDir.y) * Mathf.Rad2Deg;
-            transform.eulerAngles = Vector3.up * Mathf.SmoothDampAngle(transform.eulerAngles.y, rotation, ref currentVeclocity, smoothRotationTime);
+        Vector2 input;
+        if (enableMobile)
+        {
+            input = new Vector2(joystick.input.x,joystick.input.y);
         }
-        float tragetSpeed = MoveSpeed * inputDir.magnitude;
-        currentSpeed = Mathf.SmoothDamp(currentSpeed, tragetSpeed, ref speedVelocity, 0.1f);
+        else
+        {
+            input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        }
+        Vector2 inputDir = input.normalized;
+        if(inputDir != Vector2.zero)
+        {
+            float rot = Mathf.Atan2(inputDir.x, inputDir.y) * Mathf.Rad2Deg + myCamera.eulerAngles.y;
+            transform.eulerAngles = Vector3.up * Mathf.SmoothDampAngle(transform.eulerAngles.y, rot, ref currentVeclocity, smoothRotationTime);
+        }
+        float targetSpeed = (moveSpeed * inputDir.magnitude);
+        currentSpeed = Mathf.SmoothDamp(currentSpeed, targetSpeed, ref speedVelocity,0.1f);
+        if(inputDir.magnitude >0)
+        {
+            playerActions.Run();
+        }
+        else
+        {
+            playerActions.Stay();
+        }
 
-        transform.Translate(transform.forward * currentSpeed * Time.deltaTime, Space.World);
+        transform.Translate(transform.forward * currentSpeed * Time.deltaTime,Space.World);
 
     }
 }

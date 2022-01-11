@@ -15,11 +15,11 @@ V:/work/My Projects/Unity Projects/Project-5_Multiplayer_Photon
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-53561
+60098
 Successfully changed project path to: V:/work/My Projects/Unity Projects/Project-5_Multiplayer_Photon
 V:/work/My Projects/Unity Projects/Project-5_Multiplayer_Photon
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 69.03 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 67.88 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.21f1 (a38c86f6690f)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.21f1/Editor/Data/Resources/UnitySubsystems
@@ -35,602 +35,293 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.21f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.21f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.21f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56784
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56148
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.21f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.002028 seconds.
+Registered in 0.003436 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 71.02 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 75.07 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  3.213 seconds
+- Completed reload, in  3.898 seconds
 Domain Reload Profiling:
-	ReloadAssembly (3214ms)
-		BeginReloadAssembly (86ms)
+	ReloadAssembly (3898ms)
+		BeginReloadAssembly (97ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (2ms)
-		EndReloadAssembly (924ms)
-			LoadAssemblies (82ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (851ms)
+			LoadAssemblies (94ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (373ms)
+			SetupTypeCache (278ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (54ms)
+			RebuildScriptCaches (64ms)
 			SetupLoadedEditorAssemblies (328ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (6ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (71ms)
+				InitializePlatformSupportModulesInManaged (7ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (75ms)
 				BeforeProcessingInitializeOnLoad (30ms)
-				ProcessInitializeOnLoadAttributes (155ms)
-				ProcessInitializeOnLoadMethodAttributes (64ms)
+				ProcessInitializeOnLoadAttributes (160ms)
+				ProcessInitializeOnLoadMethodAttributes (55ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.006403 seconds.
+Registered in 0.007222 seconds.
+Begin MonoManager ReloadAssembly
+Error: Could not load signature of Photon.Pun.UtilityScripts.PhotonLagSimulationGui:get_Peer due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Error: Could not load signature of Photon.Realtime.CustomTypesUnity:SerializeVector3 due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Error: Could not load signature of Photon.Pun.Demo.WebRpcImplementationExample:OnWebRpcResponse due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Error: Could not load signature of Photon.Pun.CustomTypes:SerializePhotonPlayer due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Error: Could not load signature of Photon.Chat.Demo.ChatGui:DebugReturn due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Pun.MonoBehaviourPunCallbacks:OnRoomPropertiesUpdate due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Realtime.IInRoomCallbacks:OnRoomPropertiesUpdate due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Pun.MonoBehaviourPunCallbacks:OnRoomPropertiesUpdate due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Pun.MonoBehaviourPunCallbacks:OnPlayerPropertiesUpdate due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Pun.MonoBehaviourPunCallbacks:OnWebRpcResponse due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Pun.UtilityScripts.PunTurnManager:OnEvent due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Pun.UtilityScripts.PunTurnManager:OnRoomPropertiesUpdate due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Pun.MonoBehaviourPunCallbacks:OnRoomPropertiesUpdate due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Pun.MonoBehaviourPunCallbacks:OnPlayerPropertiesUpdate due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Pun.MonoBehaviourPunCallbacks:OnWebRpcResponse due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Pun.Demo.Procedural.Cluster:OnRoomPropertiesUpdate due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Pun.MonoBehaviourPunCallbacks:OnRoomPropertiesUpdate due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Pun.MonoBehaviourPunCallbacks:OnPlayerPropertiesUpdate due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Pun.MonoBehaviourPunCallbacks:OnWebRpcResponse due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Pun.Demo.Asteroids.LobbyMainPanel:OnPlayerPropertiesUpdate due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Pun.MonoBehaviourPunCallbacks:OnRoomPropertiesUpdate due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Pun.MonoBehaviourPunCallbacks:OnPlayerPropertiesUpdate due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Pun.MonoBehaviourPunCallbacks:OnWebRpcResponse due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Pun.UtilityScripts.CountdownTimer:OnRoomPropertiesUpdate due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Pun.MonoBehaviourPunCallbacks:OnRoomPropertiesUpdate due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Pun.MonoBehaviourPunCallbacks:OnPlayerPropertiesUpdate due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Pun.MonoBehaviourPunCallbacks:OnWebRpcResponse due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Pun.Demo.Asteroids.PlayerOverviewPanel:OnPlayerPropertiesUpdate due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Pun.MonoBehaviourPunCallbacks:OnRoomPropertiesUpdate due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Pun.MonoBehaviourPunCallbacks:OnPlayerPropertiesUpdate due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Pun.MonoBehaviourPunCallbacks:OnWebRpcResponse due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Pun.Demo.WebRpcImplementationExample:OnWebRpcResponse due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Pun.UtilityScripts.PhotonLagSimulationGui:get_Peer due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Pun.UtilityScripts.PhotonLagSimulationGui:set_Peer due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Pun.UtilityScripts.PlayerNumbering:OnPlayerPropertiesUpdate due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Pun.MonoBehaviourPunCallbacks:OnRoomPropertiesUpdate due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Pun.MonoBehaviourPunCallbacks:OnPlayerPropertiesUpdate due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Pun.MonoBehaviourPunCallbacks:OnWebRpcResponse due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Pun.Demo.Asteroids.AsteroidsGameManager:OnPlayerPropertiesUpdate due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Pun.MonoBehaviourPunCallbacks:OnRoomPropertiesUpdate due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Pun.MonoBehaviourPunCallbacks:OnPlayerPropertiesUpdate due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Pun.MonoBehaviourPunCallbacks:OnWebRpcResponse due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Pun.Demo.Cockpit.PlayerListView:OnPlayerPropertiesUpdate due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Pun.MonoBehaviourPunCallbacks:OnRoomPropertiesUpdate due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Pun.MonoBehaviourPunCallbacks:OnPlayerPropertiesUpdate due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Pun.MonoBehaviourPunCallbacks:OnWebRpcResponse due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Chat.Demo.ChatGui:DebugReturn due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Pun.PhotonHandler:OnRoomPropertiesUpdate due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Pun.PhotonHandler:OnPlayerPropertiesUpdate due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Pun.Demo.Cockpit.PlayerDetailsController:OnPlayerPropertiesUpdate due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Pun.Demo.Cockpit.PlayerDetailsController:GetAllPlayerBuiltIntProperties due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Pun.MonoBehaviourPunCallbacks:OnRoomPropertiesUpdate due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Pun.MonoBehaviourPunCallbacks:OnPlayerPropertiesUpdate due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Pun.MonoBehaviourPunCallbacks:OnWebRpcResponse due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Pun.MonoBehaviourPunCallbacks:OnRoomPropertiesUpdate due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Pun.MonoBehaviourPunCallbacks:OnPlayerPropertiesUpdate due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Pun.MonoBehaviourPunCallbacks:OnWebRpcResponse due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Pun.Demo.Cockpit.PlayerListCell:RefreshInfo due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Pun.UtilityScripts.PunTeams:OnPlayerPropertiesUpdate due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Pun.MonoBehaviourPunCallbacks:OnRoomPropertiesUpdate due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Pun.MonoBehaviourPunCallbacks:OnPlayerPropertiesUpdate due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Pun.MonoBehaviourPunCallbacks:OnWebRpcResponse due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Pun.MonoBehaviourPunCallbacks:OnRoomPropertiesUpdate due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Pun.MonoBehaviourPunCallbacks:OnPlayerPropertiesUpdate due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Pun.MonoBehaviourPunCallbacks:OnWebRpcResponse due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Pun.MonoBehaviourPunCallbacks:OnRoomPropertiesUpdate due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Pun.MonoBehaviourPunCallbacks:OnPlayerPropertiesUpdate due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Pun.MonoBehaviourPunCallbacks:OnWebRpcResponse due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Pun.MonoBehaviourPunCallbacks:OnRoomPropertiesUpdate due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Pun.MonoBehaviourPunCallbacks:OnPlayerPropertiesUpdate due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Pun.MonoBehaviourPunCallbacks:OnWebRpcResponse due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Pun.MonoBehaviourPunCallbacks:OnRoomPropertiesUpdate due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Pun.MonoBehaviourPunCallbacks:OnPlayerPropertiesUpdate due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Pun.MonoBehaviourPunCallbacks:OnWebRpcResponse due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Pun.MonoBehaviourPunCallbacks:OnRoomPropertiesUpdate due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Pun.MonoBehaviourPunCallbacks:OnPlayerPropertiesUpdate due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Pun.MonoBehaviourPunCallbacks:OnWebRpcResponse due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Realtime.SupportLogger:OnRoomPropertiesUpdate due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Realtime.SupportLogger:OnPlayerPropertiesUpdate due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Pun.Demo.Procedural.IngameControlPanel:OnRoomPropertiesUpdate due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Pun.MonoBehaviourPunCallbacks:OnRoomPropertiesUpdate due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Pun.MonoBehaviourPunCallbacks:OnPlayerPropertiesUpdate due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Pun.MonoBehaviourPunCallbacks:OnWebRpcResponse due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Pun.Demo.Cockpit.PunCockpit:OnRoomPropertiesUpdate due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Pun.MonoBehaviourPunCallbacks:OnRoomPropertiesUpdate due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Pun.MonoBehaviourPunCallbacks:OnPlayerPropertiesUpdate due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Pun.MonoBehaviourPunCallbacks:OnWebRpcResponse due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Pun.UtilityScripts.PhotonTeamsManager:Photon.Realtime.IInRoomCallbacks.OnPlayerPropertiesUpdate due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Could not load signature of Photon.Pun.UtilityScripts.PhotonTeamsManager:Photon.Realtime.IInRoomCallbacks.OnRoomPropertiesUpdate due to: Could not load file or assembly 'Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:Photon3Unity3D, Version=4.1.6.11, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+Unloading broken assembly Library/ScriptAssemblies/PhotonUnityNetworking.Utilities.dll, this assembly can cause crashes in the runtime
+Unloading broken assembly Library/ScriptAssemblies/PhotonRealtime.dll, this assembly can cause crashes in the runtime
+Unloading broken assembly Library/ScriptAssemblies/PhotonUnityNetworking.Demos.dll, this assembly can cause crashes in the runtime
+Unloading broken assembly Library/ScriptAssemblies/PhotonChat.dll, this assembly can cause crashes in the runtime
+Unloading broken assembly Library/ScriptAssemblies/PhotonUnityNetworking.dll, this assembly can cause crashes in the runtime
+Unloading broken assembly Library/ScriptAssemblies/Assembly-CSharp.dll, this assembly can cause crashes in the runtime
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.88 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.146 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2148ms)
+		BeginReloadAssembly (313ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (31ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (31ms)
+		EndReloadAssembly (1723ms)
+			LoadAssemblies (155ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (550ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (96ms)
+			SetupLoadedEditorAssemblies (716ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (8ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (177ms)
+				ProcessInitializeOnLoadAttributes (498ms)
+				ProcessInitializeOnLoadMethodAttributes (17ms)
+				AfterProcessingInitializeOnLoad (13ms)
+				EditorAssembliesLoaded (1ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (18ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.15 seconds
+Refreshing native plugins compatible for Editor in 0.52 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1732 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 77.7 MB.
+System memory in use after: 77.7 MB.
+
+Unloading 218 unused Assets to reduce memory usage. Loaded Objects now: 1967.
+Total: 6.926000 ms (FindLiveObjects: 0.246400 ms CreateObjectMapping: 0.102800 ms MarkObjects: 5.946900 ms  DeleteObjects: 0.627500 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.006129 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.49 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.835 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1837ms)
+		BeginReloadAssembly (185ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (7ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (60ms)
+		EndReloadAssembly (1499ms)
+			LoadAssemblies (161ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (550ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (68ms)
+			SetupLoadedEditorAssemblies (492ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (9ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (122ms)
+				ProcessInitializeOnLoadAttributes (336ms)
+				ProcessInitializeOnLoadMethodAttributes (14ms)
+				AfterProcessingInitializeOnLoad (9ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (13ms)
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 0.48 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1505 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 70.6 MB.
+System memory in use after: 70.7 MB.
+
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 1969.
+Total: 5.004400 ms (FindLiveObjects: 0.204500 ms CreateObjectMapping: 0.066600 ms MarkObjects: 4.706800 ms  DeleteObjects: 0.025100 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  path: Assets/TPS/Photon/PhotonUnityNetworking/Code/Editor/Newtonsoft.Json.dll
+  artifactKey: Guid(0268f98d7c649564a818b0768fc68d4b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TPS/Photon/PhotonUnityNetworking/Code/Editor/Newtonsoft.Json.dll using Guid(0268f98d7c649564a818b0768fc68d4b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9d76540bc075e1f438e7b855812537ee') in 0.062209 seconds 
+  Import took 0.068097 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.014503 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Refreshing native plugins compatible for Editor in 0.60 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.144 seconds
+- Completed reload, in  1.992 seconds
 Domain Reload Profiling:
-	ReloadAssembly (2145ms)
-		BeginReloadAssembly (263ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (14ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (30ms)
-		EndReloadAssembly (1755ms)
-			LoadAssemblies (159ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (735ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (92ms)
-			SetupLoadedEditorAssemblies (559ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (8ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (141ms)
-				ProcessInitializeOnLoadAttributes (382ms)
-				ProcessInitializeOnLoadMethodAttributes (19ms)
-				AfterProcessingInitializeOnLoad (7ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (12ms)
-Platform modules already initialized, skipping
-========================================================================
-Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.12 seconds
-Refreshing native plugins compatible for Editor in 0.57 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1731 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 77.1 MB.
-System memory in use after: 77.1 MB.
-
-Unloading 25 unused Assets to reduce memory usage. Loaded Objects now: 2158.
-Total: 7.073400 ms (FindLiveObjects: 1.746700 ms CreateObjectMapping: 0.205800 ms MarkObjects: 5.000300 ms  DeleteObjects: 0.118500 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  path: Assets/Joystick Pack
-  artifactKey: Guid(3da79ba8b3b9fc543aa5f5a60ec1ecbf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Joystick Pack using Guid(3da79ba8b3b9fc543aa5f5a60ec1ecbf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3ef81223f87f1d7e35cf35ffa11a0921') in 0.016706 seconds 
-  Import took 0.021469 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 55.326509 seconds.
-  path: Assets/Joystick Pack/Prefabs
-  artifactKey: Guid(9f642fb845be35848985e9584903dd1c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Joystick Pack/Prefabs using Guid(9f642fb845be35848985e9584903dd1c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7db83aa497086b3632c733640ef9f431') in 0.019271 seconds 
-  Import took 0.024325 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 32.586425 seconds.
-  path: Assets/Joystick Pack/Sprites/All Axis Backgrounds/AllAxis_Outline.png
-  artifactKey: Guid(88d3d6c5927b837499a39706a2649078) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Joystick Pack/Sprites/All Axis Backgrounds/AllAxis_Outline.png using Guid(88d3d6c5927b837499a39706a2649078) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '128ca4dbe4b7d8c6cde37f818905c8be') in 0.303789 seconds 
-  Import took 0.309383 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000274 seconds.
-  path: Assets/Photon/PhotonUnityNetworking/Demos/DemoHub/Sprites/toHub.png
-  artifactKey: Guid(9587663c4d27e47b19a118aabaac4a08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Photon/PhotonUnityNetworking/Demos/DemoHub/Sprites/toHub.png using Guid(9587663c4d27e47b19a118aabaac4a08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd47c8f2804ddecc044372947e324337a') in 0.033234 seconds 
-  Import took 0.039038 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000309 seconds.
-  path: Assets/Joystick Pack/Sprites/All Axis Backgrounds/AllAxis_Plain.png
-  artifactKey: Guid(1aa94e360d6a7fc4d9ddc4ab91d1d3a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Joystick Pack/Sprites/All Axis Backgrounds/AllAxis_Plain.png using Guid(1aa94e360d6a7fc4d9ddc4ab91d1d3a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f0be4406d65a70e25627a94da794bda9') in 0.030073 seconds 
-  Import took 0.035687 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000554 seconds.
-  path: Assets/Joystick Pack/Sprites/Horizontal Backgrounds/Horizontal_Outline_Arrows.png
-  artifactKey: Guid(bbb8653eb1b15384b9ac2f861814bd1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Joystick Pack/Sprites/Horizontal Backgrounds/Horizontal_Outline_Arrows.png using Guid(bbb8653eb1b15384b9ac2f861814bd1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c024abc295cef4de32651f7f264d9a67') in 0.032033 seconds 
-  Import took 0.037504 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000363 seconds.
-  path: Assets/Joystick Pack/Sprites/Horizontal Backgrounds/Horizontal_Plain.png
-  artifactKey: Guid(bd2f8974c77dfee48aa46df726f96388) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Joystick Pack/Sprites/Horizontal Backgrounds/Horizontal_Plain.png using Guid(bd2f8974c77dfee48aa46df726f96388) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6abf0568357b50f528ebcedaf153edaf') in 0.029398 seconds 
-  Import took 0.035208 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000317 seconds.
-  path: Assets/Joystick Pack/Sprites/Vertical Backgrounds/Vertical_Ridged.png
-  artifactKey: Guid(60d51cd6120199940a712e40d8408462) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Joystick Pack/Sprites/Vertical Backgrounds/Vertical_Ridged.png using Guid(60d51cd6120199940a712e40d8408462) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f49421427f4718bd969b9e77dd964f8d') in 0.031004 seconds 
-  Import took 0.035759 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000409 seconds.
-  path: Assets/Joystick Pack/Sprites/Handles/Handle_Outline_Arrows.png
-  artifactKey: Guid(f9c1abb17ec0ebc4a900a150ee33ed01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Joystick Pack/Sprites/Handles/Handle_Outline_Arrows.png using Guid(f9c1abb17ec0ebc4a900a150ee33ed01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '63b3cb92ba05720cce890d99f057ee08') in 0.031059 seconds 
-  Import took 0.035974 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000246 seconds.
-  path: Assets/Photon/PhotonUnityNetworking/Icons/PunIconApp512.png
-  artifactKey: Guid(7377013011b4c3348809ff574abe799e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Photon/PhotonUnityNetworking/Icons/PunIconApp512.png using Guid(7377013011b4c3348809ff574abe799e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '49e348e57fef339ba3d9db6efb078f7d') in 0.035455 seconds 
-  Import took 0.040283 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000358 seconds.
-  path: Assets/Photon/PhotonUnityNetworking/Icons/PunIconApp128.png
-  artifactKey: Guid(f00feafcf0675cd47a48f83ae42b06d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Photon/PhotonUnityNetworking/Icons/PunIconApp128.png using Guid(f00feafcf0675cd47a48f83ae42b06d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b6d2512b21e7b875f269e10aa4609b9d') in 0.037464 seconds 
-  Import took 0.045665 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000318 seconds.
-  path: Assets/Photon/PhotonUnityNetworking/Icons/PunIconApp32.png
-  artifactKey: Guid(436c5e63723127948af8857e903f658a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Photon/PhotonUnityNetworking/Icons/PunIconApp32.png using Guid(436c5e63723127948af8857e903f658a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '15cf344bb7a881638c93c4a242dad3a5') in 0.024771 seconds 
-  Import took 0.030045 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000256 seconds.
-  path: Assets/Joystick Pack/Sprites/All Axis Backgrounds/AllAxis_Ridged_Arrows.png
-  artifactKey: Guid(531f47bee6fa34f4190545eb6ba019cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Joystick Pack/Sprites/All Axis Backgrounds/AllAxis_Ridged_Arrows.png using Guid(531f47bee6fa34f4190545eb6ba019cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9a95734384193684eb659545cdc0eda7') in 0.028522 seconds 
-  Import took 0.033077 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000275 seconds.
-  path: Assets/Joystick Pack/Sprites/Horizontal Backgrounds/Horizontal_Ridged.png
-  artifactKey: Guid(791c21af22f5e594f8e652e735ecfd68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Joystick Pack/Sprites/Horizontal Backgrounds/Horizontal_Ridged.png using Guid(791c21af22f5e594f8e652e735ecfd68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e49965c7194b0c8e136daba2d7728002') in 0.031160 seconds 
-  Import took 0.037356 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000246 seconds.
-  path: Assets/Joystick Pack/Sprites/Horizontal Backgrounds/Horizontal_Ridged_Arrows.png
-  artifactKey: Guid(1ddb5e6a0ecd97f4e9832ca816ccf099) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Joystick Pack/Sprites/Horizontal Backgrounds/Horizontal_Ridged_Arrows.png using Guid(1ddb5e6a0ecd97f4e9832ca816ccf099) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ab59df57942ebd2c7b0bffc7eaa8472f') in 0.029086 seconds 
-  Import took 0.034774 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000261 seconds.
-  path: Assets/Joystick Pack/Sprites/Horizontal Backgrounds/Horizontal_Outline.png
-  artifactKey: Guid(bd04d6e7c47b54b47aeb35053fe18ee8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Joystick Pack/Sprites/Horizontal Backgrounds/Horizontal_Outline.png using Guid(bd04d6e7c47b54b47aeb35053fe18ee8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cba31fb2c893f734b5d7820cf149f134') in 0.029825 seconds 
-  Import took 0.034215 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000368 seconds.
-  path: Assets/Joystick Pack/Sprites/Horizontal Backgrounds/Horizontal_Plain_Arrows.png
-  artifactKey: Guid(0ab6e2c0c8955de49ba79577280925d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Joystick Pack/Sprites/Horizontal Backgrounds/Horizontal_Plain_Arrows.png using Guid(0ab6e2c0c8955de49ba79577280925d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5058183dfd6ce56b0932f6d10dc93aae') in 0.035980 seconds 
-  Import took 0.041755 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000268 seconds.
-  path: Assets/Joystick Pack/Sprites/Vertical Backgrounds/Vertical_Plain_Arrows.png
-  artifactKey: Guid(1608dc585b7c70c4c87ccf7264003231) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Joystick Pack/Sprites/Vertical Backgrounds/Vertical_Plain_Arrows.png using Guid(1608dc585b7c70c4c87ccf7264003231) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1c3badfee68698f19f55f14a43743ace') in 0.033682 seconds 
-  Import took 0.038830 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000272 seconds.
-  path: Assets/Joystick Pack/Sprites/Handles/Handle_Ridged.png
-  artifactKey: Guid(00b645bc4d18b19419ba9b76ff8ae68b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Joystick Pack/Sprites/Handles/Handle_Ridged.png using Guid(00b645bc4d18b19419ba9b76ff8ae68b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fc10083ce255f08fcb1f5dcf846148d1') in 0.026438 seconds 
-  Import took 0.031304 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000243 seconds.
-  path: Assets/Photon/PhotonUnityNetworking/Demos/DemoHub/Sprites/PunIcon-White-129.png
-  artifactKey: Guid(56bbc6b42271d4177ac313247f47ac1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Photon/PhotonUnityNetworking/Demos/DemoHub/Sprites/PunIcon-White-129.png using Guid(56bbc6b42271d4177ac313247f47ac1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '60c3f47fafaaf91e6ce23bb4c7c5a2cb') in 0.031725 seconds 
-  Import took 0.038311 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000271 seconds.
-  path: Assets/Photon/PhotonUnityNetworking/Demos/DemoHub/Sprites/OutlinedSquaredBox.png
-  artifactKey: Guid(c222cd02c447941edb09ecb6433229ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Photon/PhotonUnityNetworking/Demos/DemoHub/Sprites/OutlinedSquaredBox.png using Guid(c222cd02c447941edb09ecb6433229ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aca4b4ffb1bf4e9a422256aa99a5aa59') in 0.047782 seconds 
-  Import took 0.052738 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000247 seconds.
-  path: Assets/Photon/PhotonUnityNetworking/Icons/PunIconApp48.png
-  artifactKey: Guid(44ebd8e6f42cae445ab4b22f0a9b48a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Photon/PhotonUnityNetworking/Icons/PunIconApp48.png using Guid(44ebd8e6f42cae445ab4b22f0a9b48a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '02389d6f5674b5c11845752c50d96229') in 0.026342 seconds 
-  Import took 0.031153 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000276 seconds.
-  path: Assets/Joystick Pack/Sprites/Vertical Backgrounds/Vertical_Outline_Arrows.png
-  artifactKey: Guid(e1c04638110dc7f4d99950655ef3ab9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Joystick Pack/Sprites/Vertical Backgrounds/Vertical_Outline_Arrows.png using Guid(e1c04638110dc7f4d99950655ef3ab9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '361bf3556d0a37a6e0b1182e1f3546d4') in 0.040074 seconds 
-  Import took 0.044782 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000416 seconds.
-  path: Assets/Photon/PhotonUnityNetworking/Demos/Shared Assets/Skin/DropDown CheckMark.png
-  artifactKey: Guid(fd47c8b4ebfbd4339858d4d23f587519) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Photon/PhotonUnityNetworking/Demos/Shared Assets/Skin/DropDown CheckMark.png using Guid(fd47c8b4ebfbd4339858d4d23f587519) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e6de6362497873c31b58525c0943ea1c') in 0.023675 seconds 
-  Import took 0.028315 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000255 seconds.
-  path: Assets/Joystick Pack/Sprites/Vertical Backgrounds/Vertical_Ridged_Arrows.png
-  artifactKey: Guid(8f3813259dd7b1e4b9ec7305816b5861) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Joystick Pack/Sprites/Vertical Backgrounds/Vertical_Ridged_Arrows.png using Guid(8f3813259dd7b1e4b9ec7305816b5861) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f43242146e3298956de222f5915ce810') in 0.030856 seconds 
-  Import took 0.035036 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000302 seconds.
-  path: Assets/Joystick Pack/Sprites/Handles/Handle_Ridged_Arrows.png
-  artifactKey: Guid(7747aeef7d22c794790921ab7841ac35) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Joystick Pack/Sprites/Handles/Handle_Ridged_Arrows.png using Guid(7747aeef7d22c794790921ab7841ac35) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2bf4745f1704f99572c591e2ebf0d00d') in 0.025817 seconds 
-  Import took 0.030666 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000236 seconds.
-  path: Assets/Joystick Pack/Sprites/Vertical Backgrounds/Vertical_Plain.png
-  artifactKey: Guid(978238c63249f994aa7a84bab98e1996) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Joystick Pack/Sprites/Vertical Backgrounds/Vertical_Plain.png using Guid(978238c63249f994aa7a84bab98e1996) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '82262dace5797d5ad3aadb88a972a7c1') in 0.030584 seconds 
-  Import took 0.036115 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000278 seconds.
-  path: Assets/Joystick Pack/Sprites/All Axis Backgrounds/AllAxis_Ridged.png
-  artifactKey: Guid(7b06f7365392d0f438228b4690ae2dba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Joystick Pack/Sprites/All Axis Backgrounds/AllAxis_Ridged.png using Guid(7b06f7365392d0f438228b4690ae2dba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e3b0d5347e57ca6ec8561397abf9b2dd') in 0.033285 seconds 
-  Import took 0.038508 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000247 seconds.
-  path: Assets/Joystick Pack/Sprites/Handles/Handle_Plain.png
-  artifactKey: Guid(6aa70948fa67980488f92f59cf69c93c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Joystick Pack/Sprites/Handles/Handle_Plain.png using Guid(6aa70948fa67980488f92f59cf69c93c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '20dd232d8e8a9fc9bd3fd2d2dfa61d19') in 0.027722 seconds 
-  Import took 0.032724 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000242 seconds.
-  path: Assets/Joystick Pack/Sprites/Vertical Backgrounds/Vertical_Outline.png
-  artifactKey: Guid(2ddb20cb84ca0dc4a8ca2bd10688fe3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Joystick Pack/Sprites/Vertical Backgrounds/Vertical_Outline.png using Guid(2ddb20cb84ca0dc4a8ca2bd10688fe3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c635df9cfbb2684f3bde2b4a0009b855') in 0.029206 seconds 
-  Import took 0.033660 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000239 seconds.
-  path: Assets/Joystick Pack/Sprites/All Axis Backgrounds/AllAxis_Plain_Arrows.png
-  artifactKey: Guid(8c4d2cca68b225f43b93903dc610d5a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Joystick Pack/Sprites/All Axis Backgrounds/AllAxis_Plain_Arrows.png using Guid(8c4d2cca68b225f43b93903dc610d5a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '486604870752c1054ddc9066ceefb7e2') in 0.033547 seconds 
-  Import took 0.038201 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000244 seconds.
-  path: Assets/Photon/PhotonUnityNetworking/Icons/PunIcon-128.png
-  artifactKey: Guid(bd293dc32f4aaf94e8274f2fac2cdf89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Photon/PhotonUnityNetworking/Icons/PunIcon-128.png using Guid(bd293dc32f4aaf94e8274f2fac2cdf89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5e1e11247a6b65bda3229d5dadd563c4') in 0.033116 seconds 
-  Import took 0.037430 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000286 seconds.
-  path: Assets/Joystick Pack/Sprites/Handles/Handle_Outline.png
-  artifactKey: Guid(69429b064da5eb9468db748b029f8502) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Joystick Pack/Sprites/Handles/Handle_Outline.png using Guid(69429b064da5eb9468db748b029f8502) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f42c37758ad22c644dad4402a056202f') in 0.026282 seconds 
-  Import took 0.031685 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000248 seconds.
-  path: Assets/Joystick Pack/Sprites/All Axis Backgrounds/AllAxis_Outline_Arrows.png
-  artifactKey: Guid(fe6c6572d345d8740b6c410a7ba189eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Joystick Pack/Sprites/All Axis Backgrounds/AllAxis_Outline_Arrows.png using Guid(fe6c6572d345d8740b6c410a7ba189eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd3a148d43b772d4dbceef1c81a100fec') in 0.035181 seconds 
-  Import took 0.040520 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000263 seconds.
-  path: Assets/Photon/PhotonUnityNetworking/Demos/DemoHub/Sprites/Gradient.png
-  artifactKey: Guid(66efb24ed46044ab8a039599cbc47d7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Photon/PhotonUnityNetworking/Demos/DemoHub/Sprites/Gradient.png using Guid(66efb24ed46044ab8a039599cbc47d7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5613c8bac6863aa582ca7937e5eab714') in 0.028788 seconds 
-  Import took 0.034089 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000251 seconds.
-  path: Assets/Joystick Pack/Sprites/Handles/Handle_Plain_Arrows.png
-  artifactKey: Guid(288619e84ec1ef943b5c0106b3376031) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Joystick Pack/Sprites/Handles/Handle_Plain_Arrows.png using Guid(288619e84ec1ef943b5c0106b3376031) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'df3c6f764da5ff18c926895883c4588d') in 0.028018 seconds 
-  Import took 0.032814 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000294 seconds.
-  path: Assets/Photon/PhotonUnityNetworking/Demos/Shared Assets/Skin/DropDown Arrow.png
-  artifactKey: Guid(936345f7fc3934efa8119a8700d904c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Photon/PhotonUnityNetworking/Demos/Shared Assets/Skin/DropDown Arrow.png using Guid(936345f7fc3934efa8119a8700d904c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c03a722f09bbc09d8127f66f26a35453') in 0.023191 seconds 
-  Import took 0.028874 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.006321 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.61 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.812 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1813ms)
-		BeginReloadAssembly (206ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (10ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (66ms)
-		EndReloadAssembly (1476ms)
-			LoadAssemblies (155ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (551ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (67ms)
-			SetupLoadedEditorAssemblies (515ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (8ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (146ms)
-				ProcessInitializeOnLoadAttributes (333ms)
-				ProcessInitializeOnLoadMethodAttributes (19ms)
-				AfterProcessingInitializeOnLoad (8ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (13ms)
-Platform modules already initialized, skipping
-Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 1.03 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1725 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 79.5 MB.
-System memory in use after: 79.6 MB.
-
-Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2175.
-Total: 4.621100 ms (FindLiveObjects: 0.241700 ms CreateObjectMapping: 0.132700 ms MarkObjects: 4.214800 ms  DeleteObjects: 0.030500 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.008091 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.61 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.839 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1840ms)
-		BeginReloadAssembly (180ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (7ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (61ms)
-		EndReloadAssembly (1542ms)
-			LoadAssemblies (156ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (598ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (63ms)
-			SetupLoadedEditorAssemblies (508ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (9ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (123ms)
-				ProcessInitializeOnLoadAttributes (347ms)
-				ProcessInitializeOnLoadMethodAttributes (20ms)
-				AfterProcessingInitializeOnLoad (7ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (13ms)
-Platform modules already initialized, skipping
-Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 0.62 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1725 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 79.6 MB.
-System memory in use after: 79.7 MB.
-
-Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2178.
-Total: 4.740600 ms (FindLiveObjects: 0.209100 ms CreateObjectMapping: 0.086000 ms MarkObjects: 4.412600 ms  DeleteObjects: 0.031100 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.006018 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.61 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.936 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1937ms)
-		BeginReloadAssembly (190ms)
+	ReloadAssembly (1993ms)
+		BeginReloadAssembly (203ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (8ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (55ms)
-		EndReloadAssembly (1607ms)
-			LoadAssemblies (175ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (607ms)
-			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (74ms)
-			SetupLoadedEditorAssemblies (532ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (9ms)
-				SetLoadedEditorAssemblies (3ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (160ms)
-				ProcessInitializeOnLoadAttributes (334ms)
-				ProcessInitializeOnLoadMethodAttributes (19ms)
-				AfterProcessingInitializeOnLoad (7ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (11ms)
-Platform modules already initialized, skipping
-Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 0.59 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1725 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 79.6 MB.
-System memory in use after: 79.7 MB.
-
-Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2181.
-Total: 4.923800 ms (FindLiveObjects: 0.217100 ms CreateObjectMapping: 0.087900 ms MarkObjects: 4.587800 ms  DeleteObjects: 0.029300 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.006741 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.63 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.907 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1907ms)
-		BeginReloadAssembly (179ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (7ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (53ms)
-		EndReloadAssembly (1606ms)
-			LoadAssemblies (160ms)
+		EndReloadAssembly (1618ms)
+			LoadAssemblies (174ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (610ms)
+			SetupTypeCache (616ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (75ms)
-			SetupLoadedEditorAssemblies (538ms)
+			RebuildScriptCaches (79ms)
+			SetupLoadedEditorAssemblies (558ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (10ms)
+				InitializePlatformSupportModulesInManaged (8ms)
 				SetLoadedEditorAssemblies (1ms)
 				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (151ms)
-				ProcessInitializeOnLoadAttributes (350ms)
-				ProcessInitializeOnLoadMethodAttributes (17ms)
-				AfterProcessingInitializeOnLoad (8ms)
+				BeforeProcessingInitializeOnLoad (121ms)
+				ProcessInitializeOnLoadAttributes (397ms)
+				ProcessInitializeOnLoadMethodAttributes (22ms)
+				AfterProcessingInitializeOnLoad (9ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (12ms)
@@ -638,70 +329,12 @@ Platform modules already initialized, skipping
 Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
 Refreshing native plugins compatible for Editor in 0.59 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1725 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 79.6 MB.
-System memory in use after: 79.7 MB.
+Unloading 1709 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 76.3 MB.
+System memory in use after: 76.4 MB.
 
-Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2184.
-Total: 5.468500 ms (FindLiveObjects: 0.300100 ms CreateObjectMapping: 0.117800 ms MarkObjects: 5.012500 ms  DeleteObjects: 0.036100 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.009633 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.90 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.887 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1888ms)
-		BeginReloadAssembly (183ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (8ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (70ms)
-		EndReloadAssembly (1605ms)
-			LoadAssemblies (145ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (604ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (65ms)
-			SetupLoadedEditorAssemblies (529ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (12ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (133ms)
-				ProcessInitializeOnLoadAttributes (348ms)
-				ProcessInitializeOnLoadMethodAttributes (19ms)
-				AfterProcessingInitializeOnLoad (12ms)
-				EditorAssembliesLoaded (2ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (12ms)
-Platform modules already initialized, skipping
-Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 0.77 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1725 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 79.6 MB.
-System memory in use after: 79.7 MB.
-
-Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2187.
-Total: 8.522600 ms (FindLiveObjects: 0.548900 ms CreateObjectMapping: 0.158000 ms MarkObjects: 7.775100 ms  DeleteObjects: 0.038600 ms)
+Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 2152.
+Total: 6.004300 ms (FindLiveObjects: 0.230300 ms CreateObjectMapping: 0.085900 ms MarkObjects: 5.621800 ms  DeleteObjects: 0.064000 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -717,815 +350,49 @@ AssetImportParameters requested are different than current active one (requested
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.008509 seconds.
+Registered in 0.005956 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.94 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.931 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1931ms)
-		BeginReloadAssembly (176ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (8ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (54ms)
-		EndReloadAssembly (1623ms)
-			LoadAssemblies (150ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (565ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (89ms)
-			SetupLoadedEditorAssemblies (560ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (10ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (154ms)
-				ProcessInitializeOnLoadAttributes (366ms)
-				ProcessInitializeOnLoadMethodAttributes (18ms)
-				AfterProcessingInitializeOnLoad (9ms)
-				EditorAssembliesLoaded (1ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (12ms)
-Platform modules already initialized, skipping
-Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
 Refreshing native plugins compatible for Editor in 0.59 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1725 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 79.6 MB.
-System memory in use after: 79.7 MB.
-
-Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2190.
-Total: 5.041000 ms (FindLiveObjects: 0.263900 ms CreateObjectMapping: 0.093000 ms MarkObjects: 4.653800 ms  DeleteObjects: 0.028800 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.008364 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.03 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.996 seconds
+- Completed reload, in  1.802 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1997ms)
-		BeginReloadAssembly (166ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (8ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (56ms)
-		EndReloadAssembly (1687ms)
-			LoadAssemblies (153ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (617ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (68ms)
-			SetupLoadedEditorAssemblies (583ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (13ms)
-				SetLoadedEditorAssemblies (2ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (151ms)
-				ProcessInitializeOnLoadAttributes (382ms)
-				ProcessInitializeOnLoadMethodAttributes (26ms)
-				AfterProcessingInitializeOnLoad (8ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (15ms)
-Platform modules already initialized, skipping
-Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 0.63 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1725 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 79.6 MB.
-System memory in use after: 79.7 MB.
-
-Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2193.
-Total: 5.782000 ms (FindLiveObjects: 0.240400 ms CreateObjectMapping: 0.094400 ms MarkObjects: 5.400400 ms  DeleteObjects: 0.044800 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.006388 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.00 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.954 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1955ms)
-		BeginReloadAssembly (207ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (8ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (64ms)
-		EndReloadAssembly (1638ms)
-			LoadAssemblies (158ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (558ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (85ms)
-			SetupLoadedEditorAssemblies (542ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (9ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (145ms)
-				ProcessInitializeOnLoadAttributes (355ms)
-				ProcessInitializeOnLoadMethodAttributes (21ms)
-				AfterProcessingInitializeOnLoad (9ms)
-				EditorAssembliesLoaded (1ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (12ms)
-Platform modules already initialized, skipping
-Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 1.34 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1725 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 79.6 MB.
-System memory in use after: 79.8 MB.
-
-Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2196.
-Total: 4.567600 ms (FindLiveObjects: 0.365100 ms CreateObjectMapping: 0.130200 ms MarkObjects: 4.041900 ms  DeleteObjects: 0.028500 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.005885 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.69 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.856 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1857ms)
-		BeginReloadAssembly (172ms)
+	ReloadAssembly (1803ms)
+		BeginReloadAssembly (171ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (9ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (55ms)
-		EndReloadAssembly (1576ms)
-			LoadAssemblies (148ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (520ms)
-			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (84ms)
-			SetupLoadedEditorAssemblies (577ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (8ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (150ms)
-				ProcessInitializeOnLoadAttributes (390ms)
-				ProcessInitializeOnLoadMethodAttributes (18ms)
-				AfterProcessingInitializeOnLoad (9ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (12ms)
-Platform modules already initialized, skipping
-Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 0.61 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1725 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 79.6 MB.
-System memory in use after: 79.8 MB.
-
-Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2199.
-Total: 4.998000 ms (FindLiveObjects: 0.246300 ms CreateObjectMapping: 0.088400 ms MarkObjects: 4.628800 ms  DeleteObjects: 0.032600 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.006797 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.79 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.946 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1946ms)
-		BeginReloadAssembly (174ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (10ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (56ms)
-		EndReloadAssembly (1633ms)
-			LoadAssemblies (148ms)
+		EndReloadAssembly (1510ms)
+			LoadAssemblies (150ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
 			SetupTypeCache (552ms)
 			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (74ms)
-			SetupLoadedEditorAssemblies (555ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (11ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (154ms)
-				ProcessInitializeOnLoadAttributes (360ms)
-				ProcessInitializeOnLoadMethodAttributes (20ms)
-				AfterProcessingInitializeOnLoad (7ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (12ms)
-Platform modules already initialized, skipping
-Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 0.56 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1725 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 79.7 MB.
-System memory in use after: 79.8 MB.
-
-Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2202.
-Total: 5.749600 ms (FindLiveObjects: 0.215400 ms CreateObjectMapping: 0.089200 ms MarkObjects: 5.402100 ms  DeleteObjects: 0.040600 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.006237 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.69 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.895 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1895ms)
-		BeginReloadAssembly (162ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (10ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (50ms)
-		EndReloadAssembly (1623ms)
-			LoadAssemblies (139ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (606ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (67ms)
-			SetupLoadedEditorAssemblies (544ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (8ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (132ms)
-				ProcessInitializeOnLoadAttributes (377ms)
-				ProcessInitializeOnLoadMethodAttributes (17ms)
-				AfterProcessingInitializeOnLoad (8ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (11ms)
-Platform modules already initialized, skipping
-Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 0.63 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1725 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 79.7 MB.
-System memory in use after: 79.8 MB.
-
-Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2205.
-Total: 5.059100 ms (FindLiveObjects: 0.242800 ms CreateObjectMapping: 0.087000 ms MarkObjects: 4.692600 ms  DeleteObjects: 0.034500 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.008230 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.92 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.879 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1879ms)
-		BeginReloadAssembly (195ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (7ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (58ms)
-		EndReloadAssembly (1561ms)
-			LoadAssemblies (191ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (545ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (71ms)
-			SetupLoadedEditorAssemblies (508ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (8ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (128ms)
-				ProcessInitializeOnLoadAttributes (346ms)
-				ProcessInitializeOnLoadMethodAttributes (17ms)
-				AfterProcessingInitializeOnLoad (7ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (20ms)
-Platform modules already initialized, skipping
-Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 0.62 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1725 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 79.8 MB.
-System memory in use after: 79.9 MB.
-
-Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2208.
-Total: 5.355800 ms (FindLiveObjects: 0.267100 ms CreateObjectMapping: 0.120600 ms MarkObjects: 4.936900 ms  DeleteObjects: 0.029700 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.007795 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.60 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.973 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1973ms)
-		BeginReloadAssembly (188ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (8ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (51ms)
-		EndReloadAssembly (1673ms)
-			LoadAssemblies (159ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (690ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (63ms)
-			SetupLoadedEditorAssemblies (502ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (8ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (139ms)
-				ProcessInitializeOnLoadAttributes (327ms)
-				ProcessInitializeOnLoadMethodAttributes (19ms)
-				AfterProcessingInitializeOnLoad (7ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (11ms)
-Platform modules already initialized, skipping
-Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 0.83 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1725 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 79.8 MB.
-System memory in use after: 79.9 MB.
-
-Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2211.
-Total: 5.120900 ms (FindLiveObjects: 0.233300 ms CreateObjectMapping: 0.097900 ms MarkObjects: 4.756900 ms  DeleteObjects: 0.031000 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.007002 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.06 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.930 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1931ms)
-		BeginReloadAssembly (174ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (8ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (52ms)
-		EndReloadAssembly (1654ms)
-			LoadAssemblies (153ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (599ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (72ms)
-			SetupLoadedEditorAssemblies (544ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (9ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (151ms)
-				ProcessInitializeOnLoadAttributes (354ms)
-				ProcessInitializeOnLoadMethodAttributes (20ms)
-				AfterProcessingInitializeOnLoad (7ms)
-				EditorAssembliesLoaded (1ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (11ms)
-Platform modules already initialized, skipping
-Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 0.60 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1725 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 79.8 MB.
-System memory in use after: 79.9 MB.
-
-Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2214.
-Total: 5.473500 ms (FindLiveObjects: 0.242700 ms CreateObjectMapping: 0.088500 ms MarkObjects: 5.109900 ms  DeleteObjects: 0.030300 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.007783 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.61 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.964 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1965ms)
-		BeginReloadAssembly (176ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (11ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (52ms)
-		EndReloadAssembly (1669ms)
-			LoadAssemblies (146ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (565ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (87ms)
-			SetupLoadedEditorAssemblies (543ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (8ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (129ms)
-				ProcessInitializeOnLoadAttributes (375ms)
-				ProcessInitializeOnLoadMethodAttributes (19ms)
-				AfterProcessingInitializeOnLoad (10ms)
-				EditorAssembliesLoaded (1ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (13ms)
-Platform modules already initialized, skipping
-Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 1.48 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1725 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 79.8 MB.
-System memory in use after: 79.9 MB.
-
-Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2217.
-Total: 5.018200 ms (FindLiveObjects: 0.232100 ms CreateObjectMapping: 0.091600 ms MarkObjects: 4.663800 ms  DeleteObjects: 0.028600 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.005823 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.03 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  2.024 seconds
-Domain Reload Profiling:
-	ReloadAssembly (2025ms)
-		BeginReloadAssembly (178ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (8ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (61ms)
-		EndReloadAssembly (1716ms)
-			LoadAssemblies (149ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (634ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (83ms)
-			SetupLoadedEditorAssemblies (519ms)
+			RebuildScriptCaches (76ms)
+			SetupLoadedEditorAssemblies (509ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (10ms)
 				SetLoadedEditorAssemblies (1ms)
 				RefreshPlugins (1ms)
 				BeforeProcessingInitializeOnLoad (135ms)
-				ProcessInitializeOnLoadAttributes (344ms)
-				ProcessInitializeOnLoadMethodAttributes (19ms)
-				AfterProcessingInitializeOnLoad (8ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (13ms)
-Platform modules already initialized, skipping
-Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 0.60 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1725 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 79.8 MB.
-System memory in use after: 79.9 MB.
-
-Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2220.
-Total: 4.418800 ms (FindLiveObjects: 0.217000 ms CreateObjectMapping: 0.086800 ms MarkObjects: 4.083800 ms  DeleteObjects: 0.029500 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 897.232756 seconds.
-  path: Assets/Scenes/SampleScene.unity
-  artifactKey: Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/SampleScene.unity using Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '727f278afdab41641afe6b89f52c6be4') in 0.043477 seconds 
-  Import took 0.049135 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 5.125915 seconds.
-  path: Assets/Scenes/prototypeScene.unity
-  artifactKey: Guid(af36fa67de139ee4da3397a6054bd594) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/prototypeScene.unity using Guid(af36fa67de139ee4da3397a6054bd594) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4334c1a2f839efa0865c7d3055273e9d') in 0.017653 seconds 
-  Import took 0.022697 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 19.709218 seconds.
-  path: Assets/Yurowm
-  artifactKey: Guid(7f1cfbbe3157d5c499d231d0348c85e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Yurowm using Guid(7f1cfbbe3157d5c499d231d0348c85e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cb8cceb7a8e70cecf8ef64377aa83e63') in 0.014319 seconds 
-  Import took 0.019432 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 7.112607 seconds.
-  path: Assets/Yurowm/Demo
-  artifactKey: Guid(d09eb7e0316c35f43a05e321dd69a920) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Yurowm/Demo using Guid(d09eb7e0316c35f43a05e321dd69a920) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'abf8fc41326882d2ab2547595d51de59') in 0.017754 seconds 
-  Import took 0.023803 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.822799 seconds.
-  path: Assets/Yurowm/Demo/Material
-  artifactKey: Guid(a1b6d6bdfcdab9e4f93953e615270810) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Yurowm/Demo/Material using Guid(a1b6d6bdfcdab9e4f93953e615270810) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ac9502b62c3402a12bba0b3937a0f8d9') in 0.013531 seconds 
-  Import took 0.018291 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.689972 seconds.
-  path: Assets/Yurowm/Demo/Prefabs
-  artifactKey: Guid(223200cdb9da06c40b88423d4edb25d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Yurowm/Demo/Prefabs using Guid(223200cdb9da06c40b88423d4edb25d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c52b57b28c7f6eaf6fd0a11fe9be9548') in 0.004287 seconds 
-  Import took 0.008678 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 17.766559 seconds.
-  path: Assets/Prototyping
-  artifactKey: Guid(89b6876010b441e44914817a652141a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prototyping using Guid(89b6876010b441e44914817a652141a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b4abc8e5863fe99a671ca099b9f50505') in 0.013711 seconds 
-  Import took 0.018047 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.964143 seconds.
-  path: Assets/Prototyping/Prefabs
-  artifactKey: Guid(7bc7b3fb43e3a364fa6b69fa0dafc212) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prototyping/Prefabs using Guid(7bc7b3fb43e3a364fa6b69fa0dafc212) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fb3f3bf0d16a26a95f08775dbc7a61fd') in 0.004190 seconds 
-  Import took 0.009419 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 11.335543 seconds.
-  path: Assets/Prototyping/Prefabs/RampPrototype04x02x02.prefab
-  artifactKey: Guid(8f350e08c5ff4894c89e61f2a8935f8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prototyping/Prefabs/RampPrototype04x02x02.prefab using Guid(8f350e08c5ff4894c89e61f2a8935f8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '11c64d57154f8196828d23d3df0e2b69') in 0.047264 seconds 
-  Import took 0.051467 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.646405 seconds.
-  path: Assets/Prototyping/Models/RampPrototype04x02x02.fbx
-  artifactKey: Guid(c7612f3502df7ee4586c333bd17f1ef5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prototyping/Models/RampPrototype04x02x02.fbx using Guid(c7612f3502df7ee4586c333bd17f1ef5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f9cb73aa28dbfe664b8c423539662905') in 0.767562 seconds 
-  Import took 0.772032 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.709151 seconds.
-  path: Assets/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Racing Kit/Models/roadRampLongCurvedWall.fbx
-  artifactKey: Guid(002276cc119770f4c8b9797abd47f7e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Racing Kit/Models/roadRampLongCurvedWall.fbx using Guid(002276cc119770f4c8b9797abd47f7e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2b281ff453d12c9941f92a3d628c755c') in 0.041474 seconds 
-  Import took 0.046437 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 100.550695 seconds.
-  path: Assets
-  artifactKey: Guid(00000000000000001000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets using Guid(00000000000000001000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '42d402b061de3733987d63b9cc3b64de') in 0.016502 seconds 
-  Import took 0.022777 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 56.229651 seconds.
-  path: Assets/Prototyping
-  artifactKey: Guid(f91557d03e5bc4b429fe4ce3643f7584) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prototyping using Guid(f91557d03e5bc4b429fe4ce3643f7584) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7116fd83b372f2804380f57f83d80d2a') in 0.004588 seconds 
-  Import took 0.009487 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.163024 seconds.
-  path: Assets/Prototyping/Prefabs
-  artifactKey: Guid(b7fd744af0c01c94c9c84cc342423458) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prototyping/Prefabs using Guid(b7fd744af0c01c94c9c84cc342423458) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f20b21175f8a1c86c1704fb0161760a3') in 0.004584 seconds 
-  Import took 0.010729 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.061287 seconds.
-  path: Assets/Prototyping/Prefabs/PillarPrototype02x08x02.prefab
-  artifactKey: Guid(44884af1ac1d64d42902da40268ba120) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prototyping/Prefabs/PillarPrototype02x08x02.prefab using Guid(44884af1ac1d64d42902da40268ba120) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fb97da56c640543dd67d37dc8bceec42') in 0.061259 seconds 
-  Import took 0.068916 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 282.942872 seconds.
-  path: Assets/Yurowm/Characters/Sci-fi Soldier/Sci-Fi_Soldier.prefab
-  artifactKey: Guid(2960e74aa60394a4e94594b056ac9189) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Yurowm/Characters/Sci-fi Soldier/Sci-Fi_Soldier.prefab using Guid(2960e74aa60394a4e94594b056ac9189) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c71132e2df55d705608a29bfed0a5fa7') in 0.021895 seconds 
-  Import took 0.028243 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.011325 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.81 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  2.118 seconds
-Domain Reload Profiling:
-	ReloadAssembly (2119ms)
-		BeginReloadAssembly (203ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (10ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (61ms)
-		EndReloadAssembly (1750ms)
-			LoadAssemblies (181ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (653ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (88ms)
-			SetupLoadedEditorAssemblies (524ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (20ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (149ms)
-				ProcessInitializeOnLoadAttributes (329ms)
-				ProcessInitializeOnLoadMethodAttributes (17ms)
+				ProcessInitializeOnLoadAttributes (341ms)
+				ProcessInitializeOnLoadMethodAttributes (14ms)
 				AfterProcessingInitializeOnLoad (7ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (11ms)
 Platform modules already initialized, skipping
 Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 0.92 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 0.60 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1722 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 81.0 MB.
-System memory in use after: 80.7 MB.
+Unloading 1709 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 76.3 MB.
+System memory in use after: 76.4 MB.
 
-Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 2227.
-Total: 5.582200 ms (FindLiveObjects: 0.335100 ms CreateObjectMapping: 0.151100 ms MarkObjects: 4.623500 ms  DeleteObjects: 0.470700 ms)
+Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 2154.
+Total: 5.564800 ms (FindLiveObjects: 0.217100 ms CreateObjectMapping: 0.086100 ms MarkObjects: 5.227700 ms  DeleteObjects: 0.032100 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -1541,49 +408,49 @@ AssetImportParameters requested are different than current active one (requested
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.008550 seconds.
+Registered in 0.006130 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.14 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 0.60 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.944 seconds
+- Completed reload, in  1.842 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1945ms)
-		BeginReloadAssembly (179ms)
+	ReloadAssembly (1843ms)
+		BeginReloadAssembly (191ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (12ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (53ms)
-		EndReloadAssembly (1598ms)
-			LoadAssemblies (155ms)
+			CreateAndSetChildDomain (55ms)
+		EndReloadAssembly (1537ms)
+			LoadAssemblies (165ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (516ms)
+			SetupTypeCache (565ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (92ms)
-			SetupLoadedEditorAssemblies (500ms)
+			RebuildScriptCaches (74ms)
+			SetupLoadedEditorAssemblies (542ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (8ms)
 				SetLoadedEditorAssemblies (1ms)
 				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (132ms)
-				ProcessInitializeOnLoadAttributes (332ms)
-				ProcessInitializeOnLoadMethodAttributes (18ms)
-				AfterProcessingInitializeOnLoad (7ms)
+				BeforeProcessingInitializeOnLoad (129ms)
+				ProcessInitializeOnLoadAttributes (380ms)
+				ProcessInitializeOnLoadMethodAttributes (15ms)
+				AfterProcessingInitializeOnLoad (8ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (11ms)
 Platform modules already initialized, skipping
 Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 0.60 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 0.65 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1727 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 81.7 MB.
-System memory in use after: 80.9 MB.
+Unloading 1709 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 76.3 MB.
+System memory in use after: 76.4 MB.
 
-Unloading 21 unused Assets to reduce memory usage. Loaded Objects now: 2234.
-Total: 6.995700 ms (FindLiveObjects: 0.375500 ms CreateObjectMapping: 0.118700 ms MarkObjects: 5.474200 ms  DeleteObjects: 1.024400 ms)
+Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 2156.
+Total: 5.355300 ms (FindLiveObjects: 0.249700 ms CreateObjectMapping: 0.097100 ms MarkObjects: 4.976400 ms  DeleteObjects: 0.030500 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -1597,26 +464,60 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
-Received Import Request.
-  Time since last request: 171.861903 seconds.
-  path: Assets/Yurowm
-  artifactKey: Guid(fb344f222c1e0b649bf8afe44e68be51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Yurowm using Guid(fb344f222c1e0b649bf8afe44e68be51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '13c684eb1e8c0e6cd699b8f88ec74e4e') in 0.026284 seconds 
-  Import took 0.031800 seconds .
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.006160 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.59 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.927 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1928ms)
+		BeginReloadAssembly (193ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (9ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (57ms)
+		EndReloadAssembly (1620ms)
+			LoadAssemblies (157ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (640ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (85ms)
+			SetupLoadedEditorAssemblies (498ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (8ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (130ms)
+				ProcessInitializeOnLoadAttributes (336ms)
+				ProcessInitializeOnLoadMethodAttributes (14ms)
+				AfterProcessingInitializeOnLoad (7ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (12ms)
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 0.65 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1709 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 76.3 MB.
+System memory in use after: 76.4 MB.
 
-========================================================================
-Received Import Request.
-  Time since last request: 4.119543 seconds.
-  path: Assets/Yurowm/Characters
-  artifactKey: Guid(2f628578a8c25dc419f0906920b39460) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Yurowm/Characters using Guid(2f628578a8c25dc419f0906920b39460) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '57e4a1516150845acc214cdea1d55a85') in 0.013976 seconds 
-  Import took 0.018246 seconds .
+Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 2158.
+Total: 5.912000 ms (FindLiveObjects: 0.242200 ms CreateObjectMapping: 0.107400 ms MarkObjects: 5.514300 ms  DeleteObjects: 0.046300 ms)
 
-========================================================================
-Received Import Request.
-  Time since last request: 0.854818 seconds.
-  path: Assets/Yurowm/Characters/Sci-fi Soldier
-  artifactKey: Guid(5546faebe7e820c4381feaa436690b58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Yurowm/Characters/Sci-fi Soldier using Guid(5546faebe7e820c4381feaa436690b58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '16a8a5767ce608355da4228821949385') in 0.012974 seconds 
-  Import took 0.017438 seconds .
-
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
