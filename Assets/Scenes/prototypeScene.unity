@@ -370,7 +370,7 @@ GameObject:
   - component: {fileID: 460592383}
   - component: {fileID: 460592382}
   m_Layer: 5
-  m_Name: RightButton
+  m_Name: RightAnalog
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -847,8 +847,10 @@ MonoBehaviour:
   xAxis: 0
   rotationSensitive: 0.3
   distanceOffset: 2
-  smoothDamp: 0
+  smoothTime: 0.1
   currentVelocity: {x: 0, y: 0, z: 0}
+  current: {x: 0, y: 0, z: 0}
+  target: {x: 0, y: 0, z: 0}
 --- !u!1 &966720103
 GameObject:
   m_ObjectHideFlags: 0
@@ -1018,6 +1020,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 946379596, guid: 2703bf6137c3c244e86115e939611307, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 5ee42c4b2c174f54687457e74407d6c3, type: 2}
     - target: {fileID: 946379597, guid: 2703bf6137c3c244e86115e939611307, type: 3}
       propertyPath: m_RootOrder
       value: 5
