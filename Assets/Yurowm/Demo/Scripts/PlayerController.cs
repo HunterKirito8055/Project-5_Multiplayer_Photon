@@ -10,11 +10,6 @@ public class PlayerController : MonoBehaviour {
 
 	private Animator animator;
 
-    private void Update()
-    {
-        Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-       
-    }
     void Awake() {
 		animator = GetComponent<Animator> ();
 		if (arsenal.Length > 0)
@@ -42,7 +37,7 @@ public class PlayerController : MonoBehaviour {
 				}
 				animator.runtimeAnimatorController = hand.controller;
 				return;
-				}
+			}
 		}
 	}
 
