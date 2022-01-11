@@ -8,9 +8,12 @@ public class MyCamera : MonoBehaviour
     public FixedTouchField touch;
     public bool enableMobile;
     public float yAxis, xAxis ;
-    public float rotationSensitive = 8f, distanceOffset = 2f;
+    public float rotationSensitive = 8f;
+    public GameObject crosshairPrefab;
+    
+    public Vector3 distanceOffset = new Vector3(0,1.25f,2f);
 
-    float minYRot = -40f, maxYRot = 85f;public float smoothTime = 0.12f;
+    float minYRot = -40f, maxYRot = 78f;public float smoothTime = 0.12f;
    public  Vector3 currentVelocity;
    public Vector3 current,target;
     private void LateUpdate()
@@ -33,7 +36,11 @@ public class MyCamera : MonoBehaviour
 
         current = Vector3.SmoothDamp(current, target, ref currentVelocity, smoothTime);
         transform.eulerAngles = current;
-        transform.position = player.position - transform.forward * distanceOffset;
+
+        Vector3 dir = Vector3.zero;
+        dir= player.position - transform.forward * Mathf.Abs(distanceOffset.z);
+        dir.y += distanceOffset.y;
+        transform.position = dir;
 
     }
 }//class
