@@ -16,11 +16,11 @@ public class MyPlayer : MonoBehaviour
     public float currentSpeed;
     public float speedVelocity;
     Transform myCamera;
-    Actions playerActions;
+    Actions actions;
     private void Start()
     {
         myCamera = Camera.main.transform;
-        playerActions = GetComponent<Actions>();
+        //actions = GetComponent<Actions>();
     }
     void Update()
     {
@@ -41,14 +41,6 @@ public class MyPlayer : MonoBehaviour
         }
         float targetSpeed = (moveSpeed * inputDir.magnitude);
         currentSpeed = Mathf.SmoothDamp(currentSpeed, targetSpeed, ref speedVelocity,0.1f);
-        if(inputDir.magnitude >0)
-        {
-            playerActions.Run();
-        }
-        else
-        {
-            playerActions.Stay();
-        }
 
         transform.Translate(transform.forward * currentSpeed * Time.deltaTime,Space.World);
 

@@ -15,6 +15,8 @@ public class MyCamera : MonoBehaviour
    public Vector3 current,target;
     private void LateUpdate()
     {
+        if (enableMobile) rotationSensitive = 0.2f;
+
         if (enableMobile)
         {
             yAxis += touch.TouchDist.x * rotationSensitive;
