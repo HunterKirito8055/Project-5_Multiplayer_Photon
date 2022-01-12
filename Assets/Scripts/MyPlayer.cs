@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public class MyPlayer : MonoBehaviour
 {
     public float moveSpeed = 3f;
@@ -11,6 +12,23 @@ public class MyPlayer : MonoBehaviour
     public FixedJoystick joystick;
     public GameObject gunRayPoint;
     public GameObject crosshair;
+    public float jumpForce;
+    [Range(0,5f)]
+    public float fallMulti = 2.5f;
+    public bool fire;
+
+    public bool isFire
+    {
+        get
+        {
+            return fire;
+        }
+        set
+        {
+            fire = value;
+            anim.SetBool("fire 0", value);
+        }
+    }
 
     [Space(20)]
     [Header("Just There!")]
@@ -22,6 +40,7 @@ public class MyPlayer : MonoBehaviour
     Animator anim;
     FireButton fireBtn;
     FixedButton fixedButton;
+    Rigidbody rb;
     private void Start()
     {
         anim = GetComponent<Animator>();
@@ -30,6 +49,7 @@ public class MyPlayer : MonoBehaviour
         fireBtn = GameObject.Find("FireBtn").GetComponent<FireButton>();
         fixedButton.SetPlayer(this);
         fireBtn.SetPlayer(this);
+        rb = GetComponent<Rigidbody>();
         //actions = GetComponent<Actions>();
     }
     void Update()
@@ -65,7 +85,11 @@ public class MyPlayer : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Fire();
+            Jump();
+        }
+        if(rb.velocity.y < 0)
+        {
+            rb.velocity -= Vector3.up * Mathf.Abs(Physics.gravity.y) * Mathf.Abs(fallMulti) * Time.deltaTime;
         }
     }
     private void LateUpdate()
@@ -75,7 +99,8 @@ public class MyPlayer : MonoBehaviour
 
     public void Fire()
     {
-        anim.SetTrigger("fire");
+        //anim.SetTrigger("fire");
+        isFire = true;
         RaycastHit hit;
         if (Physics.Raycast(gunRayPoint.transform.position, Camera.main.transform.forward, out hit, 25f))
         {
@@ -85,11 +110,13 @@ public class MyPlayer : MonoBehaviour
     }
     public void Jump()
     {
-
+        //  anim.SetTrigger("jump");
+        rb.velocity =rb.angularVelocity =  Vector3.zero;
+        rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
     }
     public void FireUp()
     {
-
+        isFire = false;
     }
     Vector3 crosshairVel;
     void PositionCrosshair()
@@ -97,11 +124,12 @@ public class MyPlayer : MonoBehaviour
         RaycastHit hit;
         Ray ray = Camera.main.ViewportPointToRay(Vector2.one / 2f);
         int layerMask = LayerMask.GetMask("Default");
-        if(Physics.Raycast(ray,out hit, 100f, layerMask))
+        crosshair.transform.position = ray.GetPoint(10);
+        crosshair.transform.LookAt(myCamera.transform);
+        if (Physics.Raycast(ray, out hit, 100f, layerMask))
         {
             Debug.Log(hit.transform.name);
-            crosshair.transform.position = Vector3.SmoothDamp(crosshair.transform.position,ray.GetPoint(10),ref crosshairVel,0.05f );
-            crosshair.transform.LookAt(myCamera.transform);
+            // crosshair.transform.position = Vector3.SmoothDamp(crosshair.transform.position,ray.GetPoint(10),ref crosshairVel,0.05f );
         }
     }
 }//class

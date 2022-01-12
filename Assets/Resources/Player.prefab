@@ -506,8 +506,8 @@ GameObject:
   - component: {fileID: 946379597}
   - component: {fileID: 946379592}
   - component: {fileID: 946379596}
-  - component: {fileID: 946379594}
   - component: {fileID: 946379593}
+  - component: {fileID: 946379594}
   - component: {fileID: 1405420921}
   m_Layer: 0
   m_Name: Player
@@ -570,6 +570,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!136 &946379593
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 946379591}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.10667673
+  m_Height: 0.92235994
+  m_Direction: 1
+  m_Center: {x: 0.0043586195, y: 0.45124733, z: 0}
 --- !u!114 &946379594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -593,20 +607,6 @@ MonoBehaviour:
     rightGun: {fileID: 100000, guid: d992a232642f7574b80a75c2ca4b4cb8, type: 3}
     leftGun: {fileID: 0}
     controller: {fileID: 9100000, guid: dffbd9326394a8d47a87a1e2aec70a59, type: 2}
---- !u!136 &946379593
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 946379591}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.10667673
-  m_Height: 0.92235994
-  m_Direction: 1
-  m_Center: {x: 0.0043586195, y: 0.45124733, z: 0}
 --- !u!114 &1405420921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -624,6 +624,9 @@ MonoBehaviour:
   enableMobile: 0
   joystick: {fileID: 0}
   gunRayPoint: {fileID: 0}
+  crosshair: {fileID: 0}
+  jumpForce: 0
+  fallMulti: 2.5
   currentVeclocity: 0
   currentSpeed: 0
 --- !u!1 &958725148

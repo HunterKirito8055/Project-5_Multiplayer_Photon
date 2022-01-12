@@ -16,7 +16,8 @@ public class MyCamera : MonoBehaviour
     float minYRot = -40f, maxYRot = 78f;public float smoothTime = 0.12f;
    public  Vector3 currentVelocity;
    public Vector3 current,target;
-    private void LateUpdate()
+    public float yVel;
+    private void Update()
     {
         if (enableMobile) rotationSensitive = 0.2f;
 
@@ -39,7 +40,6 @@ public class MyCamera : MonoBehaviour
 
         Vector3 dir = Vector3.zero;
         dir= player.position - transform.forward * Mathf.Abs(distanceOffset.z);
-        dir.y += distanceOffset.y;
         transform.position = dir;
 
     }
