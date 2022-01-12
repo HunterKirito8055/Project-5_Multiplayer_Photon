@@ -7,17 +7,20 @@ public class MyCamera : MonoBehaviour
     public Transform player;
     public FixedTouchField touch;
     public bool enableMobile;
-    public float yAxis, xAxis ;
+    public float yAxis, xAxis;
     public float rotationSensitive = 8f;
-    public GameObject crosshairPrefab;
-    
-    public Vector3 distanceOffset = new Vector3(0,1.25f,2f);
 
-    float minYRot = -40f, maxYRot = 78f;public float smoothTime = 0.12f;
-   public  Vector3 currentVelocity;
-   public Vector3 current,target;
+    public Vector3 distanceOffset = new Vector3(0, 1.25f, 2f);
+
+    float minYRot = -40f, maxYRot = 78f; public float smoothTime = 0.12f;
+    public Vector3 currentVelocity;
+    public Vector3 current, target;
     public float yVel;
-    private void Update()
+    private void Awake()
+    {
+        touch = GameObject.Find("RightTouchPanel").GetComponent<FixedTouchField>();
+    }
+    private void LateUpdate()
     {
         if (enableMobile) rotationSensitive = 0.2f;
 
@@ -31,15 +34,15 @@ public class MyCamera : MonoBehaviour
             yAxis += Input.GetAxis("Mouse X") * rotationSensitive;
             xAxis -= Input.GetAxis("Mouse Y") * rotationSensitive;
         }
-        
-        xAxis = Mathf.Clamp(xAxis, minYRot,maxYRot);
+
+        xAxis = Mathf.Clamp(xAxis, minYRot, maxYRot);
         target = new Vector3(xAxis, yAxis);
 
         current = Vector3.SmoothDamp(current, target, ref currentVelocity, smoothTime);
         transform.eulerAngles = current;
 
         Vector3 dir = Vector3.zero;
-        dir= player.position - transform.forward * Mathf.Abs(distanceOffset.z);
+        dir = player.position - transform.forward * Mathf.Abs(distanceOffset.z);
         transform.position = dir;
 
     }

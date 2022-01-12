@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 public class FireButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     public MyPlayer player;
+
     public void SetPlayer(MyPlayer _player)
     {
         player = _player;

@@ -5,7 +5,7 @@ public class FixedButton : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
 {
     //[HideInInspector]
     [Tooltip("Don't interrupt this")]
-    public bool Pressed;
+    public bool pressing;
 
     public MyPlayer player;
     // Use this for initialization
@@ -26,17 +26,16 @@ public class FixedButton : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        Pressed = true;
+        pressing = true;
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        Pressed = false;
+        pressing = false;
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        player.Jump();
-        throw new System.NotImplementedException();
+       // player.Jump();
     }
 }
