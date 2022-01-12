@@ -639,7 +639,7 @@ GameObject:
   - component: {fileID: 8366185933317736286}
   m_Layer: 6
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -736,6 +736,11 @@ MonoBehaviour:
     rightGun: {fileID: 100000, guid: d992a232642f7574b80a75c2ca4b4cb8, type: 3}
     leftGun: {fileID: 0}
     controller: {fileID: 9100000, guid: 5ee42c4b2c174f54687457e74407d6c3, type: 2}
+  currentArsenal:
+    name: 
+    rightGun: {fileID: 0}
+    leftGun: {fileID: 0}
+    controller: {fileID: 0}
 --- !u!114 &1405420921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -751,11 +756,16 @@ MonoBehaviour:
   moveSpeed: 3
   smoothRotationTime: 0.25
   enableMobile: 0
-  joystick: {fileID: 0}
   gunRayPoint: {fileID: 441995576}
+  headPoint: {fileID: 2084614409}
   crosshair: {fileID: 8466652074016274765}
   jumpForce: 0
   fallMulti: 2.5
+  joystick: {fileID: 0}
+  jumpBtn: {fileID: 0}
+  fireBtn: {fileID: 0}
+  leftGunMuzzleFlash: {fileID: 0}
+  rightGunMuzzleFlash: {fileID: 0}
   fire: 0
   shootSound: {fileID: 1780766688}
   runSound: {fileID: 642942315}
@@ -1694,10 +1704,10 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 499204e47eb38404ea04c8c514879c71, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

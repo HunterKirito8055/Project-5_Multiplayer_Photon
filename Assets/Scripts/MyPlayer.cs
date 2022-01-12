@@ -9,13 +9,13 @@ public class MyPlayer : MonoBehaviour
     public float moveSpeed = 3f;
     public float smoothRotationTime = 0.25f;
     public bool enableMobile;
-    public FixedJoystick joystick;
-    public GameObject gunRayPoint;
+    public GameObject gunRayPoint, headPoint;
     public GameObject crosshair;
     //jump and fall
     public float jumpForce;
     [Range(0, 5f)]
     public float fallMulti = 2.5f;
+    public FixedJoystick joystick;
     public FixedButton jumpBtn, fireBtn;
 
     public ParticleSystem leftGunMuzzleFlash, rightGunMuzzleFlash;
@@ -57,14 +57,19 @@ public class MyPlayer : MonoBehaviour
     Animator anim;
     Rigidbody rb;
     PlayerController pc;
+    MyCamera myCam;
     private void Awake()
     {
+        joystick = GameObject.Find("Fixed Joystick").GetComponent<FixedJoystick>();
         pc = GetComponent<PlayerController>();
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
     }
     private void Start()
     {
+        myCam = GameObject.Find("PlayerCamera").GetComponent<MyCamera>();
+        if (myCam)
+            myCam.player = headPoint.transform;
         myCamera = Camera.main.transform;
         if (jumpBtn == null) jumpBtn = GameObject.Find("JumpBtn").GetComponent<FixedButton>();
         if (fireBtn == null) fireBtn = GameObject.Find("FireBtn").GetComponent<FixedButton>();
@@ -123,7 +128,7 @@ public class MyPlayer : MonoBehaviour
         {
             Jump();
         }
-        if (fireBtn.pointerDown)
+        if (fireBtn.pressing)
         {
             Fire();
         }

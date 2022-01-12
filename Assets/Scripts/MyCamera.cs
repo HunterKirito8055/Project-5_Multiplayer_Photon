@@ -9,7 +9,6 @@ public class MyCamera : MonoBehaviour
     public bool enableMobile;
     public float yAxis, xAxis;
     public float rotationSensitive = 8f;
-    public GameObject crosshairPrefab;
 
     public Vector3 distanceOffset = new Vector3(0, 1.25f, 2f);
 
@@ -17,6 +16,10 @@ public class MyCamera : MonoBehaviour
     public Vector3 currentVelocity;
     public Vector3 current, target;
     public float yVel;
+    private void Awake()
+    {
+        touch = GameObject.Find("RightTouchPanel").GetComponent<FixedTouchField>();
+    }
     private void LateUpdate()
     {
         if (enableMobile) rotationSensitive = 0.2f;
