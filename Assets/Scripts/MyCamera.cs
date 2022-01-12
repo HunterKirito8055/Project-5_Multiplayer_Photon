@@ -18,6 +18,7 @@ public class MyCamera : MonoBehaviour
     public float yVel;
     private void Awake()
     {
+        transform.parent = null;
         touch = GameObject.Find("RightTouchPanel").GetComponent<FixedTouchField>();
     }
     private void LateUpdate()
