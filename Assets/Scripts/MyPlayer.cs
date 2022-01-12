@@ -12,10 +12,18 @@ public class MyPlayer : MonoBehaviour
     public FixedJoystick joystick;
     public GameObject gunRayPoint;
     public GameObject crosshair;
+    //jump and fall
     public float jumpForce;
-    [Range(0,5f)]
+    [Range(0, 5f)]
     public float fallMulti = 2.5f;
+    public FixedButton jumpBtn, fireBtn;
+
+    public ParticleSystem leftGunMuzzleFlash, rightGunMuzzleFlash;
+
+
     public bool fire;
+    //sounds
+    public AudioSource shootSound, runSound;
 
     public bool isFire
     {
@@ -27,6 +35,15 @@ public class MyPlayer : MonoBehaviour
         {
             fire = value;
             anim.SetBool("fire 0", value);
+            shootSound.loop = value;
+            if (value)
+            {
+                shootSound.Play();
+            }
+            else
+            {
+                shootSound.Stop();
+            }
         }
     }
 
@@ -38,18 +55,21 @@ public class MyPlayer : MonoBehaviour
     Transform myCamera;
     Actions actions;
     Animator anim;
-    FireButton fireBtn;
-    FixedButton fixedButton;
     Rigidbody rb;
+    PlayerController pc;
+    private void Awake()
+    {
+        pc = GetComponent<PlayerController>();
+        anim = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody>();
+    }
     private void Start()
     {
-        anim = GetComponent<Animator>();
         myCamera = Camera.main.transform;
-        fixedButton = GameObject.Find("JumpBtn").GetComponent<FixedButton>();
-        fireBtn = GameObject.Find("FireBtn").GetComponent<FireButton>();
-        fixedButton.SetPlayer(this);
+        if (jumpBtn == null) jumpBtn = GameObject.Find("JumpBtn").GetComponent<FixedButton>();
+        if (fireBtn == null) fireBtn = GameObject.Find("FireBtn").GetComponent<FixedButton>();
+        jumpBtn.SetPlayer(this);
         fireBtn.SetPlayer(this);
-        rb = GetComponent<Rigidbody>();
         //actions = GetComponent<Actions>();
     }
     void Update()
@@ -68,11 +88,20 @@ public class MyPlayer : MonoBehaviour
         {
             float rot = Mathf.Atan2(inputDir.x, inputDir.y) * Mathf.Rad2Deg + myCamera.eulerAngles.y;
             transform.eulerAngles = Vector3.up * Mathf.SmoothDampAngle(transform.eulerAngles.y, rot, ref currentVeclocity, smoothRotationTime);
+            if (!runSound.isPlaying)
+            {
+                runSound.Play();
+            }
+        }
+        else
+        {
+            runSound.Stop();
         }
         float targetSpeed = (moveSpeed * inputDir.magnitude);
         currentSpeed = Mathf.SmoothDamp(currentSpeed, targetSpeed, ref speedVelocity, 0.1f);
 
-        transform.Translate(transform.forward * currentSpeed * Time.deltaTime, Space.World);
+        if (!isFire)
+            transform.Translate(transform.forward * currentSpeed * Time.deltaTime, Space.World);
 
         if (inputDir.magnitude > 0)
         {
@@ -82,14 +111,25 @@ public class MyPlayer : MonoBehaviour
         {
             anim.SetBool("run", false);
         }
-
+        if (rb.velocity.y < 0)
+        {
+            rb.velocity -= Vector3.up * Mathf.Abs(Physics.gravity.y) * Mathf.Abs(fallMulti) * Time.deltaTime;
+        }
+        CheckInputsfrombuttons();
+    }
+    void CheckInputsfrombuttons()
+    {
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Jump();
         }
-        if(rb.velocity.y < 0)
+        if (fireBtn.pointerDown)
         {
-            rb.velocity -= Vector3.up * Mathf.Abs(Physics.gravity.y) * Mathf.Abs(fallMulti) * Time.deltaTime;
+            Fire();
+        }
+        else
+        {
+            FireUp();
         }
     }
     private void LateUpdate()
@@ -100,23 +140,31 @@ public class MyPlayer : MonoBehaviour
     public void Fire()
     {
         //anim.SetTrigger("fire");
-        isFire = true;
-        RaycastHit hit;
-        if (Physics.Raycast(gunRayPoint.transform.position, Camera.main.transform.forward, out hit, 25f))
+        if (!isFire)
         {
-            print(hit.transform.name);
+            isFire = true;
+            RaycastHit hit;
+            if (Physics.Raycast(gunRayPoint.transform.position, Camera.main.transform.forward, out hit, 25f))
+            {
+                print(hit.transform.name);
+            }
+            Debug.DrawRay(gunRayPoint.transform.position, Camera.main.transform.forward * 25f, Color.green);
+            GunMuzzleFlash(true);
         }
-        Debug.DrawRay(gunRayPoint.transform.position, Camera.main.transform.forward * 25f, Color.green);
     }
     public void Jump()
     {
         //  anim.SetTrigger("jump");
-        rb.velocity =rb.angularVelocity =  Vector3.zero;
+        rb.velocity = rb.angularVelocity = Vector3.zero;
         rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
     }
     public void FireUp()
     {
-        isFire = false;
+        if (isFire)
+        {
+            isFire = false;
+            GunMuzzleFlash(false);
+        }
     }
     Vector3 crosshairVel;
     void PositionCrosshair()
@@ -124,12 +172,35 @@ public class MyPlayer : MonoBehaviour
         RaycastHit hit;
         Ray ray = Camera.main.ViewportPointToRay(Vector2.one / 2f);
         int layerMask = LayerMask.GetMask("Default");
-        crosshair.transform.position = ray.GetPoint(10);
+        crosshair.transform.position = Vector3.Lerp(crosshair.transform.position, ray.GetPoint(10), Time.deltaTime * 20f);
         crosshair.transform.LookAt(myCamera.transform);
         if (Physics.Raycast(ray, out hit, 100f, layerMask))
         {
             Debug.Log(hit.transform.name);
             // crosshair.transform.position = Vector3.SmoothDamp(crosshair.transform.position,ray.GetPoint(10),ref crosshairVel,0.05f );
         }
+    }
+
+    void GunMuzzleFlash(bool value)
+    {
+        if (rightGunMuzzleFlash)
+        {
+            if (value)
+                rightGunMuzzleFlash.Play();
+            else
+            {
+                rightGunMuzzleFlash.Stop();
+            }
+        }
+        if (leftGunMuzzleFlash)
+        {
+            if (value)
+                leftGunMuzzleFlash.Play();
+            else
+            {
+                leftGunMuzzleFlash.Stop();
+            }
+        }
+
     }
 }//class
