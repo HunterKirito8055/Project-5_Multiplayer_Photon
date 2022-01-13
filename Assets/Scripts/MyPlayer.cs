@@ -2,9 +2,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 [RequireComponent(typeof(Rigidbody))]
-public class MyPlayer : MonoBehaviour
+public class MyPlayer : MonoBehaviourPun
 {
     public float moveSpeed = 3f;
     public float smoothRotationTime = 0.25f;
@@ -60,24 +61,47 @@ public class MyPlayer : MonoBehaviour
     MyCamera myCam;
     private void Awake()
     {
-        joystick = GameObject.Find("Fixed Joystick").GetComponent<FixedJoystick>();
-        pc = GetComponent<PlayerController>();
-        anim = GetComponent<Animator>();
-        rb = GetComponent<Rigidbody>();
+        if (photonView.IsMine)
+        {
+            joystick = GameObject.Find("Fixed Joystick").GetComponent<FixedJoystick>();
+            pc = GetComponent<PlayerController>();
+            anim = GetComponent<Animator>();
+            rb = GetComponent<Rigidbody>();
+            myCam = GameObject.Find("PlayerCamera").GetComponent<MyCamera>();
+            if (myCam)
+            {
+                myCam.gameObject.SetActive(true);
+                myCam.player = headPoint.transform;
+                myCam.playerPunView = this.photonView;
+            }
+        }
     }
     private void Start()
     {
-        myCam = GameObject.Find("PlayerCamera").GetComponent<MyCamera>();
-        if (myCam)
-            myCam.player = headPoint.transform;
-        myCamera = Camera.main.transform;
-        if (jumpBtn == null) jumpBtn = GameObject.Find("JumpBtn").GetComponent<FixedButton>();
-        if (fireBtn == null) fireBtn = GameObject.Find("FireBtn").GetComponent<FixedButton>();
-        jumpBtn.SetPlayer(this);
-        fireBtn.SetPlayer(this);
+        if (photonView.IsMine)
+        {
+
+            myCamera = Camera.main.transform;
+            if (jumpBtn == null) jumpBtn = GameObject.Find("JumpBtn").GetComponent<FixedButton>();
+            if (fireBtn == null) fireBtn = GameObject.Find("FireBtn").GetComponent<FixedButton>();
+            jumpBtn.SetPlayer(this);
+            fireBtn.SetPlayer(this);
+            crosshair.SetActive(true);
+        }
+        else
+        {
+            crosshair.SetActive(false);
+        }
         //actions = GetComponent<Actions>();
     }
     void Update()
+    {
+        if (photonView.IsMine)
+        {
+            LocalPlayerUpdate();
+        }
+    }
+    void LocalPlayerUpdate()
     {
         Vector2 inputDir;
         if (enableMobile)
@@ -124,7 +148,7 @@ public class MyPlayer : MonoBehaviour
     }
     void CheckInputsfrombuttons()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (jumpBtn.pressing)
         {
             Jump();
         }
@@ -139,7 +163,8 @@ public class MyPlayer : MonoBehaviour
     }
     private void LateUpdate()
     {
-        PositionCrosshair();
+        if (photonView.IsMine)
+            PositionCrosshair();
     }
 
     public void Fire()
@@ -159,7 +184,7 @@ public class MyPlayer : MonoBehaviour
     }
     public void Jump()
     {
-        //  anim.SetTrigger("jump");
+        anim.SetTrigger("jump");
         rb.velocity = rb.angularVelocity = Vector3.zero;
         rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
     }
@@ -207,5 +232,11 @@ public class MyPlayer : MonoBehaviour
             }
         }
 
+    }
+
+    private void OnDestroy()
+    {
+        if (myCam)
+            myCam.gameObject.SetActive(false);
     }
 }//class

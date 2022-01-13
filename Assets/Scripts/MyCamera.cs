@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Photon.Pun;
 public class MyCamera : MonoBehaviour
 {
-    public Transform player;
+    public PhotonView playerPunView;// setting this in MyPlayer script..
+    public Transform player;// setting this player in MyPlayer script.. as headpoint
     public FixedTouchField touch;
     public bool enableMobile;
     public float yAxis, xAxis;
@@ -18,8 +19,16 @@ public class MyCamera : MonoBehaviour
     public float yVel;
     private void Awake()
     {
-        transform.parent = null;
-        touch = GameObject.Find("RightTouchPanel").GetComponent<FixedTouchField>();
+        if (playerPunView.IsMine)
+        {
+            this.gameObject.SetActive(true);
+            transform.parent = null;
+            touch = GameObject.Find("RightTouchPanel").GetComponent<FixedTouchField>();
+        }
+        else
+        {
+            this.gameObject.SetActive(false);
+        }
     }
     private void LateUpdate()
     {
@@ -46,5 +55,18 @@ public class MyCamera : MonoBehaviour
         dir = player.position - transform.forward * Mathf.Abs(distanceOffset.z);
         transform.position = dir;
 
+    }
+
+    GameObject GetLocalPlayer()
+    {
+        GameObject[] allplayers = GameObject.FindGameObjectsWithTag("Player");
+        foreach (var item in allplayers)
+        {
+            if(item.GetComponent<PhotonView>().IsMine)
+            {
+                return item;
+            }
+        }
+        return null;
     }
 }//class

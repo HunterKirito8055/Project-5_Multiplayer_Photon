@@ -17,29 +17,42 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     [Header("--UI InputFields--")]
     public TMP_InputField createRoomIF;
     public TMP_InputField joinRoomIF;
+    public TMP_InputField playerNameIF;
+    
     [Header("--UI Buttons--")]
     public Button createBtn;
     public Button joinBtn;
     public Button playBtn;
 
-
+    const string playerNamePrefKey = "PlayerName";
     private void Awake()
     {
         PhotonNetwork.ConnectUsingSettings();
         statusTxt.text = "Please wait...";
         Debug.Log("awake");
         roomUI.SetActive(false);
-        connectingUi.SetActive(false);
+        connectingUi.SetActive(true);
     }
     private void Start()
     {
+        CheckForSavedName();
+        playerNameIF.onValueChanged.AddListener(SetPlayerName) ;
         createBtn.onClick.AddListener(() => OnCreateBtn());
         joinBtn.onClick.AddListener(() => OnJoinBtn());
         playBtn.onClick.AddListener(() => OnPlayBtn());
     }
+    void CheckForSavedName()
+    {
+        string defaultName = string.Empty;
+        if(PlayerPrefs.HasKey(playerNamePrefKey))
+        {
+            defaultName = PlayerPrefs.GetString(playerNamePrefKey);
+            playerNameIF.text = defaultName;
+        }
+        PhotonNetwork.NickName = defaultName;
+    }
     public override void OnConnectedToMaster()
     {
-        base.OnConnectedToMaster();
         connectingUi.SetActive(true);
         roomUI.SetActive(false);
         connectingtxt.text = "Joining Lobby...";
@@ -48,7 +61,6 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     }
     public override void OnJoinedLobby()
     {
-        base.OnJoinedLobby();
         statusTxt.text = "Lobby Joined!";
         connectingUi.SetActive(false);
         roomUI.SetActive(true);
@@ -56,15 +68,14 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     }
     public override void OnJoinedRoom()
     {
-        base.OnJoinedRoom();
         PhotonNetwork.LoadLevel(1);
         Debug.Log("joined room");
     }
     public override void OnDisconnected(DisconnectCause cause)
     {
-        base.OnDisconnected(cause);
-        connectingUi.SetActive(true);
-        roomUI.SetActive(false);
+        if(connectingUi)
+        connectingUi.SetActive(false);
+        if(roomUI) roomUI.SetActive(true);
         connectingtxt.text = "Disconnected..." + cause.ToString();
         Debug.Log("Disconnected");
         statusTxt.text = "";
@@ -101,4 +112,14 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     }
     #endregion
 
+    public void SetPlayerName(string value)
+    {
+        if(string.IsNullOrEmpty(value))
+        {
+            return;
+        }
+        PlayerPrefs.SetString(playerNamePrefKey, value);
+        PhotonNetwork.NickName = value;
+
+    }
 }//class
