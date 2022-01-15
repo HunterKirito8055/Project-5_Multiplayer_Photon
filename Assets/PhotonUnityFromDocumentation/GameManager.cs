@@ -13,12 +13,36 @@ namespace Com.Vishal.Networking
     public class GameManager : MonoBehaviourPunCallbacks
     {
         public static GameManager Instance;
+
+        public GameObject playerPrefab;
+
         [SerializeField]
         private Button leaveRoomBtn;
         private void Start()
         {
             Instance = this;
+            DontDestroyOnLoad(this.gameObject);
             leaveRoomBtn.onClick.AddListener(LeaveRoom);
+            //if (playerPrefab == null)
+            //{
+            //    Debug.Log("<Color=Red><a>Missing</a></Color> playerPrefab Reference. Please set it up in GameObject 'Game Manager'", this);
+            //}
+            //else
+            //{
+            //    Debug.LogFormat("We are Instantiating LocalPlayer from {0}", SceneManagerHelper.ActiveSceneName);
+            //    // we're in a room. spawn a character for the local player. it gets synced by using PhotonNetwork.Instantiate
+            //    PhotonNetwork.Instantiate(this.playerPrefab.name, new Vector3(0, 5, 0), Quaternion.identity, 0);
+            //}
+            if (PlayerManager.localPlayerInstance == null)
+            {
+                Debug.LogFormat("We are Instantiating LocalPlayer from {0}", SceneManagerHelper.ActiveSceneName);
+                // we're in a room. spawn a character for the local player. it gets synced by using PhotonNetwork.Instantiate
+                PhotonNetwork.Instantiate(this.playerPrefab.name, new Vector3(0, 5, 0), Quaternion.identity, 0);
+            }
+            else
+            {
+                Debug.LogFormat("Ignoring scene load for {0}", SceneManagerHelper.ActiveSceneName);
+            }
         }
         public override void OnLeftRoom()
         {

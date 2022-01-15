@@ -622,6 +622,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 732d4d76708f7d04a8e9dae32c6b0bc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerPrefab: {fileID: 6563209536602739424, guid: a7be28af9a15ad84c802a18c5ac51f85, type: 3}
   leaveRoomBtn: {fileID: 995585059}
 --- !u!4 &973358315
 Transform:

@@ -401,21 +401,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 103536950261911866, guid: a7be28af9a15ad84c802a18c5ac51f85, type: 3}
-      propertyPath: beams
-      value: 
-      objectReference: {fileID: 6893732486416969530}
     - target: {fileID: 341782533083348442, guid: a7be28af9a15ad84c802a18c5ac51f85, type: 3}
       propertyPath: sceneViewId
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4362806433277763009, guid: a7be28af9a15ad84c802a18c5ac51f85, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.032
-      objectReference: {fileID: 0}
-    - target: {fileID: 4362806433277763009, guid: a7be28af9a15ad84c802a18c5ac51f85, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.143
       objectReference: {fileID: 0}
     - target: {fileID: 6563209536602739424, guid: a7be28af9a15ad84c802a18c5ac51f85, type: 3}
       propertyPath: m_Name
@@ -465,14 +453,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7564821404705924873, guid: a7be28af9a15ad84c802a18c5ac51f85, type: 3}
-      propertyPath: smoothSpeed
-      value: 0.5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7be28af9a15ad84c802a18c5ac51f85, type: 3}
---- !u!1 &6893732486416969530 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9192795763857137355, guid: a7be28af9a15ad84c802a18c5ac51f85, type: 3}
-  m_PrefabInstance: {fileID: 6893732486416969529}
-  m_PrefabAsset: {fileID: 0}
