@@ -62,7 +62,8 @@ namespace Com.Vishal.Networking
             if(playerUiPrefab !=null)
             {
                 GameObject _uiGo = Instantiate(playerUiPrefab);
-                _uiGo.SendMessage("SetTarget", this, SendMessageOptions.RequireReceiver);
+                PlayerUI pui = _uiGo.GetComponent<PlayerUI>();
+                pui.SetTarget(this);
             }
             else
             {
@@ -103,7 +104,8 @@ namespace Com.Vishal.Networking
                 transform.position = new Vector3(0f, 5, 0);
             }
             GameObject _uiGo = Instantiate(this.playerUiPrefab);
-            _uiGo.SendMessage("SetTarget", this, SendMessageOptions.RequireReceiver);
+            PlayerUI pui = _uiGo.GetComponent<PlayerUI>();
+            pui.SetTarget(this);
         }
         void ProcessInputs()
         {
