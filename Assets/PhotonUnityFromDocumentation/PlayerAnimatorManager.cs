@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 namespace Com.Vishal.Networking
 {
     [RequireComponent(typeof(Animator))]
-    public class PlayerAnimatorManager : MonoBehaviour
+    public class PlayerAnimatorManager : MonoBehaviourPun
     {
         Animator animator;
         public float directionDapmTime = 0.25f;
@@ -13,22 +14,26 @@ namespace Com.Vishal.Networking
         private void Start()
         {
             animator = GetComponent<Animator>();
-            if(!animator)
+            if (!animator)
             {
                 Debug.Log("PlayerAnimatormnager is missing animator component", this);
-            }    
+            }
         }
 
         private void Update()
         {
-            if(!animator)
+            if (!photonView.IsMine && PhotonNetwork.IsConnected)
+            {
+                return;
+            }
+            if (!animator)
             {
                 return;
             }
 
             float h = Input.GetAxis("Horizontal");
             float v = Input.GetAxis("Vertical");
-            if(v<0)
+            if (v < 0)
             {
                 v = 0;
             }

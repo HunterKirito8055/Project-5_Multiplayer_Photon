@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 namespace Com.Vishal.Networking
 {
-    public class CameraWork : MonoBehaviour
+    public class CameraWork : MonoBehaviourPun
     {
         [SerializeField]
         float distance = 7f, height = 3f, smoothSpeed = 0.125f;
@@ -44,7 +45,7 @@ namespace Com.Vishal.Networking
         /// Raises the start following event.
         /// Use this when you don't know at the time of editing what to follow, typically instances managed by the photon network.
         /// </summary>
-        void OnStartFollowing()
+        public void OnStartFollowing()
         {
             cameraTrans = Camera.main.transform;
             isFollowing = true;

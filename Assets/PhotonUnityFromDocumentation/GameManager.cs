@@ -14,7 +14,7 @@ namespace Com.Vishal.Networking
     {
         public static GameManager Instance;
         [SerializeField]
-        Button leaveRoomBtn;
+        private Button leaveRoomBtn;
         private void Start()
         {
             Instance = this;
