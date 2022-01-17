@@ -75,13 +75,23 @@ namespace Com.Vishal.Networking
             }
             // #Critical
             // Follow the Target GameObject on screen.
-            if (target.photonView.IsMine)
-                if (targetTransform != null)
+
+            if (targetTransform != null)
+            {
+                targetPosition = targetTransform.position;
+                targetPosition.y += characterControllerHeight;
+                this.transform.position = Camera.main.WorldToScreenPoint(targetPosition) + screenOffset;
+                if (target.photonView.IsMine)
                 {
-                    targetPosition = targetTransform.position;
-                    targetPosition.y += characterControllerHeight;
-                    this.transform.position = Camera.main.WorldToScreenPoint(targetPosition) + screenOffset;
+                    this.transform.localScale = Vector3.one;
                 }
+                else
+                {
+                    float dis = Vector3.Distance(Camera.main.transform.position, targetPosition);
+                    this.transform.localScale = new Vector3(Mathf.InverseLerp(70f, 7f, dis), Mathf.InverseLerp(15f, 7f, dis), 1f);
+                }
+            }
+
         }
     }//class
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 using Photon.Pun;
 
 [RequireComponent(typeof(Rigidbody))]
-public class MyPlayer : MonoBehaviourPun
+public class MyPlayer : MonoBehaviourPun, IPunObservable
 {
     public float moveSpeed = 3f;
     public float smoothRotationTime = 0.25f;
@@ -35,15 +35,19 @@ public class MyPlayer : MonoBehaviourPun
         set
         {
             fire = value;
-            anim.SetBool("fire 0", value);
-            shootSound.loop = value;
-            if (value)
+            GunMuzzleFlash(fire);
+            if (photonView.IsMine)
             {
-                shootSound.Play();
-            }
-            else
-            {
-                shootSound.Stop();
+                anim.SetBool("fire 0", value);
+                shootSound.loop = value;
+                if (value)
+                {
+                    shootSound.Play();
+                }
+                else
+                {
+                    shootSound.Stop();
+                }
             }
         }
     }
@@ -186,7 +190,7 @@ public class MyPlayer : MonoBehaviourPun
     {
         anim.SetTrigger("jump");
         rb.velocity = rb.angularVelocity = Vector3.zero;
-        rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
+        // rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
     }
     public void FireUp()
     {
@@ -206,14 +210,14 @@ public class MyPlayer : MonoBehaviourPun
         crosshair.transform.LookAt(myCamera.transform);
         if (Physics.Raycast(ray, out hit, 100f, layerMask))
         {
-            Debug.Log(hit.transform.name);
+            // Debug.Log(hit.transform.name);
             // crosshair.transform.position = Vector3.SmoothDamp(crosshair.transform.position,ray.GetPoint(10),ref crosshairVel,0.05f );
         }
     }
 
     void GunMuzzleFlash(bool value)
     {
-        if (rightGunMuzzleFlash)
+        if (rightGunMuzzleFlash != null)
         {
             if (value)
                 rightGunMuzzleFlash.Play();
@@ -222,7 +226,7 @@ public class MyPlayer : MonoBehaviourPun
                 rightGunMuzzleFlash.Stop();
             }
         }
-        if (leftGunMuzzleFlash)
+        if (leftGunMuzzleFlash != null)
         {
             if (value)
                 leftGunMuzzleFlash.Play();
@@ -238,5 +242,18 @@ public class MyPlayer : MonoBehaviourPun
     {
         if (myCam)
             myCam.gameObject.SetActive(false);
+    }
+
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        if (stream.IsWriting)
+        {
+            stream.SendNext(isFire);
+        }
+        else
+        {
+            isFire = (bool)stream.ReceiveNext();
+            Debug.Log("stream data " + isFire);
+        }
     }
 }//class

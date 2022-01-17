@@ -23,16 +23,6 @@ namespace Com.Vishal.Networking
             Instance = this;
             DontDestroyOnLoad(this.gameObject);
             leaveRoomBtn.onClick.AddListener(LeaveRoom);
-            //if (playerPrefab == null)
-            //{
-            //    Debug.Log("<Color=Red><a>Missing</a></Color> playerPrefab Reference. Please set it up in GameObject 'Game Manager'", this);
-            //}
-            //else
-            //{
-            //    Debug.LogFormat("We are Instantiating LocalPlayer from {0}", SceneManagerHelper.ActiveSceneName);
-            //    // we're in a room. spawn a character for the local player. it gets synced by using PhotonNetwork.Instantiate
-            //    PhotonNetwork.Instantiate(this.playerPrefab.name, new Vector3(0, 5, 0), Quaternion.identity, 0);
-            //}
             if (PlayerManager.localPlayerInstance == null)
             {
                 Debug.LogFormat("We are Instantiating LocalPlayer from {0}", SceneManagerHelper.ActiveSceneName);
@@ -46,7 +36,7 @@ namespace Com.Vishal.Networking
         }
         public override void OnLeftRoom()
         {
-            SceneManager.LoadScene(0);
+            PhotonNetwork.LoadLevel(0);
         }
 
         public void LeaveRoom()

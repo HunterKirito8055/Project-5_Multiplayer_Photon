@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour
                     newLeftGun.transform.parent = leftGunBone;
                     newLeftGun.transform.localPosition = Vector3.zero;
                     newLeftGun.transform.localRotation = Quaternion.Euler(90, 0, 0);
-                    myPlayer.rightGunMuzzleFlash = newLeftGun.GetComponentInChildren<ParticleSystem>();
+                    myPlayer.leftGunMuzzleFlash = newLeftGun.GetComponentInChildren<ParticleSystem>();
                 }
                 animator.runtimeAnimatorController = hand.controller;
                 return;
