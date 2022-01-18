@@ -2,13 +2,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Photon.Pun;
 
 [RequireComponent(typeof(Rigidbody))]
 public class MyPlayer : MonoBehaviourPun, IPunObservable
 {
     public float moveSpeed = 3f;
-    public float smoothRotationTime = 0.25f;
+    public float smoothRotationTime = 0.125f;
     public bool enableMobile;
     public GameObject gunRayPoint, headPoint;
     public GameObject crosshair;
@@ -16,6 +17,7 @@ public class MyPlayer : MonoBehaviourPun, IPunObservable
     public float jumpForce;
     [Range(0, 5f)]
     public float fallMulti = 2.5f;
+
     public FixedJoystick joystick;
     public FixedButton jumpBtn, fireBtn;
 
@@ -25,6 +27,21 @@ public class MyPlayer : MonoBehaviourPun, IPunObservable
     public bool fire;
     //sounds
     public AudioSource shootSound, runSound;
+
+
+    //health
+    public Image healthBar;
+    public Gradient healthGradient;
+    public float playerHealth;
+    public float PlayerHealth
+    {
+        get { return playerHealth; }
+        set
+        {
+            playerHealth = value;
+        }
+    }
+
 
     public bool isFire
     {
@@ -84,7 +101,6 @@ public class MyPlayer : MonoBehaviourPun, IPunObservable
     {
         if (photonView.IsMine)
         {
-
             myCamera = Camera.main.transform;
             if (jumpBtn == null) jumpBtn = GameObject.Find("JumpBtn").GetComponent<FixedButton>();
             if (fireBtn == null) fireBtn = GameObject.Find("FireBtn").GetComponent<FixedButton>();
@@ -170,21 +186,29 @@ public class MyPlayer : MonoBehaviourPun, IPunObservable
         if (photonView.IsMine)
             PositionCrosshair();
     }
-
+    PhotonView otherPlayer;
     public void Fire()
     {
         //anim.SetTrigger("fire");
         if (!isFire)
         {
+            Debug.DrawRay(gunRayPoint.transform.position, Camera.main.transform.forward * 25f, Color.green);
             isFire = true;
+        }
+        if (isFire)
+        {
             RaycastHit hit;
             if (Physics.Raycast(gunRayPoint.transform.position, Camera.main.transform.forward, out hit, 25f))
             {
-                print(hit.transform.name);
+                transform.eulerAngles = Vector3.up * Mathf.SmoothDampAngle(transform.eulerAngles.y, myCamera.eulerAngles.y, ref currentVeclocity, smoothRotationTime);
+                if (hit.transform.CompareTag("Player") && !(otherPlayer = hit.transform.GetComponent<PhotonView>()).IsMine)
+                {
+                    otherPlayer.RPC("GetDamage", RpcTarget.AllBuffered, 0.01f);
+                    print(hit.transform.name);
+                }
             }
-            Debug.DrawRay(gunRayPoint.transform.position, Camera.main.transform.forward * 25f, Color.green);
-            GunMuzzleFlash(true);
         }
+
     }
     public void Jump()
     {
@@ -197,8 +221,12 @@ public class MyPlayer : MonoBehaviourPun, IPunObservable
         if (isFire)
         {
             isFire = false;
-            GunMuzzleFlash(false);
         }
+    }
+    [PunRPC]
+    public void GetDamage(float amount)
+    {
+        PlayerHealth -= amount;
     }
     Vector3 crosshairVel;
     void PositionCrosshair()
@@ -253,7 +281,6 @@ public class MyPlayer : MonoBehaviourPun, IPunObservable
         else
         {
             isFire = (bool)stream.ReceiveNext();
-            Debug.Log("stream data " + isFire);
         }
     }
 }//class
