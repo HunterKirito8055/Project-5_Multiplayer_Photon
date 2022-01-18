@@ -21,6 +21,9 @@ public class MyPlayer : MonoBehaviourPun, IPunObservable
     public FixedJoystick joystick;
     public FixedButton jumpBtn, fireBtn;
 
+    [Header("Chat System")]
+    public GameObject chatSys;
+
     public ParticleSystem leftGunMuzzleFlash, rightGunMuzzleFlash;
 
 
@@ -39,6 +42,11 @@ public class MyPlayer : MonoBehaviourPun, IPunObservable
         set
         {
             playerHealth = value;
+            if(photonView.IsMine)
+            {
+                healthBar.fillAmount = value;
+                healthBar.color = healthGradient.Evaluate(value);
+            }
         }
     }
 
@@ -95,6 +103,11 @@ public class MyPlayer : MonoBehaviourPun, IPunObservable
                 myCam.player = headPoint.transform;
                 myCam.playerPunView = this.photonView;
             }
+            chatSys.gameObject.SetActive(true);
+        }
+        else
+        {
+            chatSys.gameObject.SetActive(false);
         }
     }
     private void Start()
@@ -104,6 +117,7 @@ public class MyPlayer : MonoBehaviourPun, IPunObservable
             myCamera = Camera.main.transform;
             if (jumpBtn == null) jumpBtn = GameObject.Find("JumpBtn").GetComponent<FixedButton>();
             if (fireBtn == null) fireBtn = GameObject.Find("FireBtn").GetComponent<FixedButton>();
+            healthBar.transform.parent.gameObject.SetActive(true);
             jumpBtn.SetPlayer(this);
             fireBtn.SetPlayer(this);
             crosshair.SetActive(true);
@@ -111,6 +125,7 @@ public class MyPlayer : MonoBehaviourPun, IPunObservable
         else
         {
             crosshair.SetActive(false);
+            healthBar.transform.parent.gameObject.SetActive(false);
         }
         //actions = GetComponent<Actions>();
     }
@@ -151,7 +166,11 @@ public class MyPlayer : MonoBehaviourPun, IPunObservable
 
         if (!isFire)
             transform.Translate(transform.forward * currentSpeed * Time.deltaTime, Space.World);
-
+        else
+        {
+            float rot = Mathf.Atan2(inputDir.x, inputDir.y) * Mathf.Rad2Deg + myCamera.eulerAngles.y;
+            transform.eulerAngles = Vector3.up * rot;
+        }
         if (inputDir.magnitude > 0)
         {
             anim.SetBool("run", true);
@@ -200,8 +219,8 @@ public class MyPlayer : MonoBehaviourPun, IPunObservable
             RaycastHit hit;
             if (Physics.Raycast(gunRayPoint.transform.position, Camera.main.transform.forward, out hit, 25f))
             {
-                transform.eulerAngles = Vector3.up * Mathf.SmoothDampAngle(transform.eulerAngles.y, myCamera.eulerAngles.y, ref currentVeclocity, smoothRotationTime);
-                if (hit.transform.CompareTag("Player") && !(otherPlayer = hit.transform.GetComponent<PhotonView>()).IsMine)
+                otherPlayer = hit.transform.GetComponent<PhotonView>();
+                if (otherPlayer!=null && hit.transform.CompareTag("Player") && !otherPlayer.IsMine)
                 {
                     otherPlayer.RPC("GetDamage", RpcTarget.AllBuffered, 0.01f);
                     print(hit.transform.name);
