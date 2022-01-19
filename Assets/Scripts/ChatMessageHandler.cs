@@ -9,25 +9,35 @@ using ExitGames.Client.Photon;
 
 public class ChatMessageHandler : MonoBehaviourPun
 {
-    public Text receivedMsg;
+    public HudNotification receivedMsg;
 
-    public enum EventCodes
+    public enum PhotonEventCode
     {
         CHATMESSAGE = 0
     }
     private void OnEnable()
     {
-
+        PhotonNetwork.NetworkingClient.EventReceived += OnEventRaised;
+        GameManager.Instance.chatMessageHandler = this;
     }
 
     public void OnEventRaised(EventData photonEvent)
     {
-
+        PhotonEventCode eventCode = (PhotonEventCode)photonEvent.Code;
+        object content = photonEvent.CustomData;
+        DecryptData(eventCode, content);
     }
-
+    void DecryptData(PhotonEventCode code, object content)
+    {
+        if (code == PhotonEventCode.CHATMESSAGE)
+        {
+            object[] datas = content as object[];
+            receivedMsg.ChatMessage = (string)datas[0] + " sent by " + (string)datas[1];
+        }
+    }
     public void SendMessageToAll(string msg)
     {
-        object[] datas = new object[] { msg };
+        object[] datas = new object[] { msg, PhotonNetwork.LocalPlayer.NickName };
         RaiseEventOptions options = new RaiseEventOptions();
         options.CachingOption = EventCaching.DoNotCache;
         options.Receivers = ReceiverGroup.All;
@@ -35,10 +45,10 @@ public class ChatMessageHandler : MonoBehaviourPun
 
         SendOptions sendOptions = new SendOptions { Reliability = true };
 
-        PhotonNetwork.RaiseEvent((byte)EventCodes.CHATMESSAGE, datas, options, sendOptions);
+        PhotonNetwork.RaiseEvent((byte)PhotonEventCode.CHATMESSAGE, datas, options, sendOptions);
     }
     private void OnDisable()
     {
-
+        PhotonNetwork.NetworkingClient.EventReceived -= OnEventRaised;
     }
 }

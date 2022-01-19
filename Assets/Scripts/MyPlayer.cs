@@ -4,16 +4,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
+using Photon.Realtime;
 
 [RequireComponent(typeof(Rigidbody))]
-public class MyPlayer : MonoBehaviourPun, IPunObservable
+public class MyPlayer : MonoBehaviourPun, IPunObservable , IInRoomCallbacks
 {
     public float moveSpeed = 3f;
     public float smoothRotationTime = 0.125f;
     public bool enableMobile;
     public GameObject gunRayPoint, headPoint;
     public GameObject crosshair;
-
+    public GameObject worldSpaceCanvas;
     public GameObject playerName3D;
     //jump and fall
     public float jumpForce;
@@ -37,7 +38,7 @@ public class MyPlayer : MonoBehaviourPun, IPunObservable
 
 
     //health
-    public Image healthBar;
+    public Image healthBar, worldCanvasHealthbar;
     public Gradient healthGradient;
     public float playerHealth;
     public float PlayerHealth
@@ -50,6 +51,11 @@ public class MyPlayer : MonoBehaviourPun, IPunObservable
             {
                 healthBar.fillAmount = value;
                 healthBar.color = healthGradient.Evaluate(value);
+            }
+            else
+            {
+                worldCanvasHealthbar.fillAmount = value;
+                worldCanvasHealthbar.color = healthGradient.Evaluate(value);
             }
         }
     }
@@ -91,7 +97,7 @@ public class MyPlayer : MonoBehaviourPun, IPunObservable
     Animator anim;
     Rigidbody rb;
     PlayerController pc;
-    MyCamera myCam;
+    public MyCamera myCam;
     private void Awake()
     {
         if (photonView.IsMine)
@@ -108,12 +114,16 @@ public class MyPlayer : MonoBehaviourPun, IPunObservable
                 myCam.playerPunView = this.photonView;
             }
             chatSys.gameObject.SetActive(true);
-            playerName3D.SetActive(false);
+            worldSpaceCanvas.SetActive(false);
         }
         else
         {
+            GameManager.Instance.allPlayers.Add(this);
             chatSys.gameObject.SetActive(false);
-            playerName3D.SetActive(true);
+            worldSpaceCanvas.SetActive(true);
+            worldSpaceCanvas.GetComponent<Canvas>().renderMode = RenderMode.WorldSpace;
+            worldSpaceCanvas.GetComponent<Canvas>().worldCamera = GameManager.Instance.playerCam;
+            playerName3D.GetComponent<TMPro.TextMeshPro>().text = this.photonView.Owner.NickName;
         }
     }
     private void Start()
@@ -209,15 +219,17 @@ public class MyPlayer : MonoBehaviourPun, IPunObservable
     private void LateUpdate()
     {
         if (photonView.IsMine)
-            PositionCrosshair();
-        else
         {
-            float roty = Mathf.Atan2(movementInputs.x, movementInputs.y) * Mathf.Rad2Deg + myCamera.eulerAngles.y;
-            float rotx = myCamera.eulerAngles.x;
-            playerName3D.transform.eulerAngles = new Vector3(rotx, roty, 0);
+            PositionCrosshair();
+            foreach (var item in GameManager.Instance.allPlayers)
+            {
+                float roty = myCamera.eulerAngles.y;
+                float rotx = myCamera.eulerAngles.x;
+                item.worldSpaceCanvas.transform.eulerAngles = new Vector3(rotx, roty, 0);
+            }
         }
     }
-    PhotonView otherPlayer;
+    public PhotonView otherPlayer;
     public void Fire()
     {
         //anim.SetTrigger("fire");
@@ -229,13 +241,13 @@ public class MyPlayer : MonoBehaviourPun, IPunObservable
         if (isFire)
         {
             RaycastHit hit;
-            if (Physics.Raycast(gunRayPoint.transform.position, Camera.main.transform.forward, out hit, 25f))
+            if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, 100f))
             {
                 otherPlayer = hit.transform.GetComponent<PhotonView>();
                 if (otherPlayer != null && hit.transform.CompareTag("Player") && !otherPlayer.IsMine)
                 {
                     otherPlayer.RPC("GetDamage", RpcTarget.AllBuffered, 0.01f);
-                    print(hit.transform.name);
+                    Debug.Log(hit.transform.name);
                 }
             }
         }
@@ -296,7 +308,10 @@ public class MyPlayer : MonoBehaviourPun, IPunObservable
         }
 
     }
-
+    
+    public void OnDisable()
+    {
+    }
     private void OnDestroy()
     {
         if (myCam)
@@ -313,5 +328,31 @@ public class MyPlayer : MonoBehaviourPun, IPunObservable
         {
             isFire = (bool)stream.ReceiveNext();
         }
+    }
+
+    public void OnPlayerEnteredRoom(Player newPlayer)
+    {
+
+    }
+
+    public void OnPlayerLeftRoom(Player otherPlayer)
+    {
+       
+       
+    }
+
+    public void OnRoomPropertiesUpdate(ExitGames.Client.Photon.Hashtable propertiesThatChanged)
+    {
+
+    }
+
+    public void OnPlayerPropertiesUpdate(Player targetPlayer, ExitGames.Client.Photon.Hashtable changedProps)
+    {
+
+    }
+
+    public void OnMasterClientSwitched(Player newMasterClient)
+    {
+        throw new NotImplementedException();
     }
 }//class

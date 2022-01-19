@@ -24,6 +24,9 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     public Button joinBtn;
     public Button playBtn;
 
+
+    private Dictionary<string, RoomInfo> cachedRoomList;
+
     const string playerNamePrefKey = "PlayerName";
     private void Awake()
     {
@@ -32,6 +35,8 @@ public class LobbyManager : MonoBehaviourPunCallbacks
         Debug.Log("awake");
         roomUI.SetActive(false);
         connectingUi.SetActive(true);
+
+        cachedRoomList = new Dictionary<string, RoomInfo>();
     }
     private void Start()
     {
@@ -65,6 +70,12 @@ public class LobbyManager : MonoBehaviourPunCallbacks
         connectingUi.SetActive(false);
         roomUI.SetActive(true);
         Debug.Log("joined lobby");
+        // whenever this joins a new lobby, clear any previous room lists
+        cachedRoomList.Clear();
+    }
+    public override void OnRoomListUpdate(List<RoomInfo> roomList)
+    {
+        UpdateCachedRoomList(roomList);
     }
     public override void OnJoinedRoom()
     {
@@ -124,7 +135,7 @@ public class LobbyManager : MonoBehaviourPunCallbacks
 
     public void OnPlayBtn()
     {
-        PhotonNetwork.JoinRandomRoom();
+        PhotonNetwork.JoinRandomOrCreateRoom();
         statusTxt.text = "Creating room now...";
     }
     #endregion
@@ -139,4 +150,39 @@ public class LobbyManager : MonoBehaviourPunCallbacks
         PhotonNetwork.NickName = value;
 
     }
+
+    private void UpdateCachedRoomList(List<RoomInfo> roomList)
+    {
+        foreach (RoomInfo info in roomList)
+        {
+            // Remove room from cached room list if it got closed, became invisible or was marked as removed
+            if (!info.IsOpen || !info.IsVisible || info.RemovedFromList)
+            {
+                if (cachedRoomList.ContainsKey(info.Name))
+                {
+                    cachedRoomList.Remove(info.Name);
+                }
+
+                continue;
+            }
+
+            // Update cached room info
+            if (cachedRoomList.ContainsKey(info.Name))
+            {
+                cachedRoomList[info.Name] = info;
+            }
+            // Add new room info to cache
+            else
+            {
+                cachedRoomList.Add(info.Name, info);
+            }
+            if (info.IsOpen)
+            {
+                activeRoomAny = info.Name;
+            }
+        }
+    }
+
+
+    string activeRoomAny;
 }//class
