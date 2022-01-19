@@ -13,6 +13,8 @@ public class MyPlayer : MonoBehaviourPun, IPunObservable
     public bool enableMobile;
     public GameObject gunRayPoint, headPoint;
     public GameObject crosshair;
+
+    public GameObject playerName3D;
     //jump and fall
     public float jumpForce;
     [Range(0, 5f)]
@@ -23,6 +25,8 @@ public class MyPlayer : MonoBehaviourPun, IPunObservable
 
     [Header("Chat System")]
     public GameObject chatSys;
+
+    [Space(15)]
 
     public ParticleSystem leftGunMuzzleFlash, rightGunMuzzleFlash;
 
@@ -42,7 +46,7 @@ public class MyPlayer : MonoBehaviourPun, IPunObservable
         set
         {
             playerHealth = value;
-            if(photonView.IsMine)
+            if (photonView.IsMine)
             {
                 healthBar.fillAmount = value;
                 healthBar.color = healthGradient.Evaluate(value);
@@ -104,10 +108,12 @@ public class MyPlayer : MonoBehaviourPun, IPunObservable
                 myCam.playerPunView = this.photonView;
             }
             chatSys.gameObject.SetActive(true);
+            playerName3D.SetActive(false);
         }
         else
         {
             chatSys.gameObject.SetActive(false);
+            playerName3D.SetActive(true);
         }
     }
     private void Start()
@@ -136,21 +142,21 @@ public class MyPlayer : MonoBehaviourPun, IPunObservable
             LocalPlayerUpdate();
         }
     }
+    Vector2 movementInputs;
     void LocalPlayerUpdate()
     {
-        Vector2 inputDir;
         if (enableMobile)
         {
-            inputDir = new Vector2(joystick.input.x, joystick.input.y);
+            movementInputs = new Vector2(joystick.input.x, joystick.input.y);
         }
         else
         {
-            inputDir = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+            movementInputs = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         }
-        inputDir = inputDir.normalized;
-        if (inputDir != Vector2.zero)
+        movementInputs = movementInputs.normalized;
+        if (movementInputs != Vector2.zero)
         {
-            float rot = Mathf.Atan2(inputDir.x, inputDir.y) * Mathf.Rad2Deg + myCamera.eulerAngles.y;
+            float rot = Mathf.Atan2(movementInputs.x, movementInputs.y) * Mathf.Rad2Deg + myCamera.eulerAngles.y;
             transform.eulerAngles = Vector3.up * Mathf.SmoothDampAngle(transform.eulerAngles.y, rot, ref currentVeclocity, smoothRotationTime);
             if (!runSound.isPlaying)
             {
@@ -161,21 +167,21 @@ public class MyPlayer : MonoBehaviourPun, IPunObservable
         {
             runSound.Stop();
         }
-        float targetSpeed = (moveSpeed * inputDir.magnitude);
+        float targetSpeed = (moveSpeed * movementInputs.magnitude);
         currentSpeed = Mathf.SmoothDamp(currentSpeed, targetSpeed, ref speedVelocity, 0.1f);
 
         if (!isFire)
             transform.Translate(transform.forward * currentSpeed * Time.deltaTime, Space.World);
         else
         {
-            float rot = Mathf.Atan2(inputDir.x, inputDir.y) * Mathf.Rad2Deg + myCamera.eulerAngles.y;
+            float rot = Mathf.Atan2(movementInputs.x, movementInputs.y) * Mathf.Rad2Deg + myCamera.eulerAngles.y;
             transform.eulerAngles = Vector3.up * rot;
         }
-        if (inputDir.magnitude > 0)
+        if (movementInputs.magnitude > 0)
         {
             anim.SetBool("run", true);
         }
-        else if (Mathf.Approximately(inputDir.magnitude, 0))
+        else if (Mathf.Approximately(movementInputs.magnitude, 0))
         {
             anim.SetBool("run", false);
         }
@@ -204,6 +210,12 @@ public class MyPlayer : MonoBehaviourPun, IPunObservable
     {
         if (photonView.IsMine)
             PositionCrosshair();
+        else
+        {
+            float roty = Mathf.Atan2(movementInputs.x, movementInputs.y) * Mathf.Rad2Deg + myCamera.eulerAngles.y;
+            float rotx = myCamera.eulerAngles.x;
+            playerName3D.transform.eulerAngles = new Vector3(rotx, roty, 0);
+        }
     }
     PhotonView otherPlayer;
     public void Fire()
@@ -220,7 +232,7 @@ public class MyPlayer : MonoBehaviourPun, IPunObservable
             if (Physics.Raycast(gunRayPoint.transform.position, Camera.main.transform.forward, out hit, 25f))
             {
                 otherPlayer = hit.transform.GetComponent<PhotonView>();
-                if (otherPlayer!=null && hit.transform.CompareTag("Player") && !otherPlayer.IsMine)
+                if (otherPlayer != null && hit.transform.CompareTag("Player") && !otherPlayer.IsMine)
                 {
                     otherPlayer.RPC("GetDamage", RpcTarget.AllBuffered, 0.01f);
                     print(hit.transform.name);

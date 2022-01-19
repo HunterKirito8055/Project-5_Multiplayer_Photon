@@ -18,7 +18,7 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     public TMP_InputField createRoomIF;
     public TMP_InputField joinRoomIF;
     public TMP_InputField playerNameIF;
-    
+
     [Header("--UI Buttons--")]
     public Button createBtn;
     public Button joinBtn;
@@ -36,7 +36,7 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     private void Start()
     {
         CheckForSavedName();
-        playerNameIF.onValueChanged.AddListener(SetPlayerName) ;
+        playerNameIF.onValueChanged.AddListener(SetPlayerName);
         createBtn.onClick.AddListener(() => OnCreateBtn());
         joinBtn.onClick.AddListener(() => OnJoinBtn());
         playBtn.onClick.AddListener(() => OnPlayBtn());
@@ -44,7 +44,7 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     void CheckForSavedName()
     {
         string defaultName = string.Empty;
-        if(PlayerPrefs.HasKey(playerNamePrefKey))
+        if (PlayerPrefs.HasKey(playerNamePrefKey))
         {
             defaultName = PlayerPrefs.GetString(playerNamePrefKey);
             playerNameIF.text = defaultName;
@@ -71,11 +71,18 @@ public class LobbyManager : MonoBehaviourPunCallbacks
         PhotonNetwork.LoadLevel(1);
         Debug.Log("joined room");
     }
+    public override void OnJoinRoomFailed(short returnCode, string message)
+    {
+        joinRoomIF.text = "Enter Room Name Again";
+        statusTxt.text = "No Such Room name Exists! \t Please try again!";
+        Debug.Log("Join room failed");
+    }
+
     public override void OnDisconnected(DisconnectCause cause)
     {
-        if(connectingUi)
-        connectingUi.SetActive(false);
-        if(roomUI) roomUI.SetActive(true);
+        if (connectingUi)
+            connectingUi.SetActive(false);
+        if (roomUI) roomUI.SetActive(true);
         connectingtxt.text = "Disconnected..." + cause.ToString();
         Debug.Log("Disconnected");
         statusTxt.text = "";
@@ -96,13 +103,23 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     {
         RoomOptions roomOptions = new RoomOptions();
         roomOptions.MaxPlayers = 4;
-        PhotonNetwork.CreateRoom(createRoomIF.text, roomOptions: roomOptions, TypedLobby.Default);
+        if (createRoomIF.text != string.Empty)
+            PhotonNetwork.CreateRoom(createRoomIF.text, roomOptions: roomOptions, TypedLobby.Default);
+        else
+        {
+            statusTxt.text = "Invalid Room Name";
+        }
     }
     public void OnJoinBtn()
     {
         RoomOptions roomOptions = new RoomOptions();
         roomOptions.MaxPlayers = 4;
-        PhotonNetwork.JoinOrCreateRoom(joinRoomIF.text, roomOptions: roomOptions, TypedLobby.Default);
+        if (joinRoomIF.text != string.Empty)
+            PhotonNetwork.JoinRoom(joinRoomIF.text);
+        else
+        {
+            statusTxt.text = "A roomname is required. If you don't know one, how will you join?";
+        }
     }
 
     public void OnPlayBtn()
@@ -114,7 +131,7 @@ public class LobbyManager : MonoBehaviourPunCallbacks
 
     public void SetPlayerName(string value)
     {
-        if(string.IsNullOrEmpty(value))
+        if (string.IsNullOrEmpty(value))
         {
             return;
         }
