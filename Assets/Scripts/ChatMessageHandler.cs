@@ -32,17 +32,19 @@ public class ChatMessageHandler : MonoBehaviourPun
         if (code == PhotonEventCode.CHATMESSAGE)
         {
             object[] datas = content as object[];
-            receivedMsg.ChatMessage = (string)datas[0] + " sent by " + (string)datas[1];
+            if ((int)datas[2] != this.photonView.ViewID)// this will let only other users in room see msgs but not us
+                receivedMsg.ChatMessage = (string)datas[0] + " sent by " + (string)datas[1];
         }
     }
     public void SendMessageToAll(string msg)
     {
-        object[] datas = new object[] { msg, PhotonNetwork.LocalPlayer.NickName };
-        RaiseEventOptions options = new RaiseEventOptions();
-        options.CachingOption = EventCaching.DoNotCache;
-        options.Receivers = ReceiverGroup.All;
-
-
+        object[] datas = new object[] { msg, PhotonNetwork.LocalPlayer.NickName, base.photonView.ViewID };
+        RaiseEventOptions options = new RaiseEventOptions
+        {
+            CachingOption = EventCaching.DoNotCache,
+            Receivers = ReceiverGroup.All,
+            //options.TargetActors = new int[] { };
+        };
         SendOptions sendOptions = new SendOptions { Reliability = true };
 
         PhotonNetwork.RaiseEvent((byte)PhotonEventCode.CHATMESSAGE, datas, options, sendOptions);

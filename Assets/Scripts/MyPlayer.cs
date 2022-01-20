@@ -7,7 +7,7 @@ using Photon.Pun;
 using Photon.Realtime;
 
 [RequireComponent(typeof(Rigidbody))]
-public class MyPlayer : MonoBehaviourPun, IPunObservable , IInRoomCallbacks
+public class MyPlayer : MonoBehaviourPun, IPunObservable, IInRoomCallbacks
 {
     public float moveSpeed = 3f;
     public float smoothRotationTime = 0.125f;
@@ -175,6 +175,7 @@ public class MyPlayer : MonoBehaviourPun, IPunObservable , IInRoomCallbacks
         }
         else
         {
+            transform.eulerAngles = Vector3.up * Mathf.SmoothDampAngle(transform.eulerAngles.y, myCamera.eulerAngles.y, ref currentVeclocity, smoothRotationTime);
             runSound.Stop();
         }
         float targetSpeed = (moveSpeed * movementInputs.magnitude);
@@ -308,7 +309,7 @@ public class MyPlayer : MonoBehaviourPun, IPunObservable , IInRoomCallbacks
         }
 
     }
-    
+
     public void OnDisable()
     {
     }
@@ -337,8 +338,8 @@ public class MyPlayer : MonoBehaviourPun, IPunObservable , IInRoomCallbacks
 
     public void OnPlayerLeftRoom(Player otherPlayer)
     {
-       
-       
+
+
     }
 
     public void OnRoomPropertiesUpdate(ExitGames.Client.Photon.Hashtable propertiesThatChanged)
