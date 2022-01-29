@@ -25,7 +25,8 @@ public class GameManager : MonoBehaviourPunCallbacks
     }
     private void Start()
     {
-        totalPlayers = PhotonNetwork.CurrentRoom.PlayerCount;
+        if (PhotonNetwork.IsConnected)
+            totalPlayers = PhotonNetwork.CurrentRoom.PlayerCount;
         leaveRoomBtn.onClick.AddListener(LeaveRoom);
         sceneCam.gameObject.SetActive(false);
         if (player == null)
