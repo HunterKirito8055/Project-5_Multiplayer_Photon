@@ -23,7 +23,21 @@ public class PlayerController : MonoBehaviour
             SetArsenal(arsenal[1].name);
         }
     }
-
+    private void Update()
+    {
+        switch (Input.inputString)
+        {
+            case "1":
+                SetArsenal(arsenal[0].name);
+                break;
+            case "2":
+                SetArsenal(arsenal[1].name);
+                break;
+            case "3":
+                SetArsenal(arsenal[2].name);
+                break;
+        }
+    }
     public void SetArsenal(string name)
     {
         foreach (Arsenal hand in arsenal)
