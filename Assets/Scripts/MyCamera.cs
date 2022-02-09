@@ -7,6 +7,7 @@ public class MyCamera : MonoBehaviour
     public PhotonView playerPunView;// setting this in MyPlayer script..
     public Transform player;// setting this player in MyPlayer script.. as headpoint
     public FixedTouchField touch;
+    public DynamicJoystick joystick;
     public bool enableMobile;
     public float yAxis, xAxis;
     public float rotationSensitive = 8f;

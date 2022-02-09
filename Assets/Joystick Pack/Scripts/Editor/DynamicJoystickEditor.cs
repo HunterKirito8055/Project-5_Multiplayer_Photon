@@ -7,11 +7,15 @@ using UnityEditor;
 public class DynamicJoystickEditor : JoystickEditor
 {
     private SerializedProperty moveThreshold;
+    private SerializedProperty horizontal;
+    private SerializedProperty vertical;
 
     protected override void OnEnable()
     {
         base.OnEnable();
         moveThreshold = serializedObject.FindProperty("moveThreshold");
+        horizontal = serializedObject.FindProperty("horizontal");
+        vertical = serializedObject.FindProperty("vertical");
     }
 
     public override void OnInspectorGUI()
@@ -31,5 +35,7 @@ public class DynamicJoystickEditor : JoystickEditor
     {
         base.DrawValues();
         EditorGUILayout.PropertyField(moveThreshold, new GUIContent("Move Threshold", "The distance away from the center input has to be before the joystick begins to move."));
+        EditorGUILayout.PropertyField(horizontal, new GUIContent("horizontal", "The distance away from the center input has to be before the joystick begins to move."));
+        EditorGUILayout.PropertyField(vertical, new GUIContent("vertical", "The distance away from the center input has to be before the joystick begins to move."));
     }
 }
