@@ -8,7 +8,12 @@ public class DynamicJoystick : Joystick
     public float MoveThreshold { get { return moveThreshold; } set { moveThreshold = Mathf.Abs(value); } }
 
     [SerializeField] private float moveThreshold = 1;
+    public float horizontal,vertical;
 
+    private void Update()
+    {
+        horizontal = this.Horizontal; vertical = this.Vertical;
+    }
     protected override void Start()
     {
         MoveThreshold = moveThreshold;

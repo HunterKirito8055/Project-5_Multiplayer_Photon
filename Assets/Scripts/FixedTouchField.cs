@@ -3,13 +3,9 @@ using UnityEngine.EventSystems;
 
 public class FixedTouchField : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
-    [HideInInspector]
     public Vector2 TouchDist;
-    [HideInInspector]
     public Vector2 PointerOld;
-    [HideInInspector]
-    protected int PointerId;
-    [HideInInspector]
+    public int PointerId;
     public bool Pressed;
 
     // Use this for initialization
@@ -25,11 +21,13 @@ public class FixedTouchField : MonoBehaviour, IPointerDownHandler, IPointerUpHan
         {
             if (PointerId >= 0 && PointerId < Input.touches.Length)
             {
+                Debug.Log("TOUCHED");
                 TouchDist = Input.touches[PointerId].position - PointerOld;
                 PointerOld = Input.touches[PointerId].position;
             }
             else
             {
+                Debug.Log("TOUCHED NOT");
                 TouchDist = new Vector2(Input.mousePosition.x, Input.mousePosition.y) - PointerOld;
                 PointerOld = Input.mousePosition;
             }
